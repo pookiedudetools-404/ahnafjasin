@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<meta name="theme-color" content="#0b0f17" />
+<meta name="description" content="PerfCore — root-only Android performance module. Complete project plan, technical reference, task tracker, and team workspace for the two-person team building it." />
+<meta name="author" content="PerfCore Team" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:title" content="PerfCore — Project Workspace" />
+<meta property="og:description" content="Root-only Android performance module for Snapdragon devices. Full plan, technical reference, and live task tracker." />
+<meta property="og:type" content="website" />
+
+<title>PerfCore — Project Workspace</title>
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0f17'/%3E%3Cpath d='M18 42 L26 22 L34 34 L42 18 L46 46' stroke='%234ade80' stroke-width='4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- ============================================================
+     BOOT OVERLAY
+     ============================================================ -->
+<div id="boot-overlay" class="boot-overlay" aria-hidden="true">
+  <div class="boot-logo">
+    <svg viewBox="0 0 64 64" width="64" height="64"><rect width="64" height="64" rx="14" fill="#0b0f17"/><path d="M18 42 L26 22 L34 34 L42 18 L46 46" stroke="#4ade80" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="boot-text">PerfCore</div>
+  <div class="boot-sub">project workspace</div>
+  <div class="boot-spinner"></div>
+</div>
+
+
+<!-- ============================================================
+     APP SHELL
+     ============================================================ -->
+<div id="app" class="app-shell">
+
+<!-- ============================================================
+     SIDEBAR
+     ============================================================ -->
+<aside id="sidebar" class="sidebar" aria-label="Main navigation">
+  <div class="sidebar-header">
+    <a href="#home" class="brand" data-nav="home">
+      <svg viewBox="0 0 64 64" width="30" height="30"><rect width="64" height="64" rx="14" fill="#0b0f17"/><path d="M18 42 L26 22 L34 34 L42 18 L46 46" stroke="#4ade80" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-name">PerfCore</span>
+    </a>
+    <button id="sidebar-close" class="icon-btn sidebar-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6 L18 18 M6 18 L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <nav class="sidebar-nav" aria-label="Sections">
+    <div class="nav-group-label">Start here</div>
+    <a href="#home" class="nav-item" data-nav="home">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 11 L12 3 L21 11 M5 10 v10 h14 V10" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="#vision" class="nav-item" data-nav="vision">
+      <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/><path d="M2 12 s3-6 10-6 s10 6 10 6 s-3 6-10 6 S2 12 2 12" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      <span>Vision &amp; Purpose</span>
+    </a>
+    <a href="#how" class="nav-item" data-nav="how">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 3 h6 v4 h-6 z M6 9 h12 v4 h-12 z M9 15 h6 v6 h-6 z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+      <span>How It Works</span>
+    </a>
+
+    <div class="nav-group-label">The work</div>
+    <a href="#roadmap" class="nav-item" data-nav="roadmap">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 12 h6 M9 12 h6 M15 12 h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="6" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="18" cy="12" r="2" fill="currentColor"/></svg>
+      <span>Roadmap</span>
+    </a>
+    <a href="#tasks" class="nav-item" data-nav="tasks">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 6 h3 M4 12 h3 M4 18 h3 M9 6 h11 M9 12 h11 M9 18 h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      <span>Tasks</span>
+      <span class="nav-badge" id="nav-task-count">0</span>
+    </a>
+    <a href="#team" class="nav-item" data-nav="team">
+      <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="9" cy="8" r="3.5" fill="currentColor"/><circle cx="17" cy="9" r="2.5" fill="currentColor"/><path d="M2 20 c0-3.5 3-6 7-6 s7 2.5 7 6 z" fill="currentColor"/></svg>
+      <span>Team &amp; Roles</span>
+    </a>
+    <a href="#future" class="nav-item" data-nav="future">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 12 a9 9 0 0 1 9-9 M21 12 a9 9 0 0 1-9 9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M12 3 v6 l4 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <span>Future Plans</span>
+    </a>
+
+    <div class="nav-group-label">Reference</div>
+    <a href="#reference" class="nav-item" data-nav="reference">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 4 h16 v16 H4 z M8 4 v16" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+      <span>Sysfs Bible</span>
+    </a>
+    <a href="#testing" class="nav-item" data-nav="testing">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M9 3 v6 l-5 9 a2 2 0 0 0 2 3 h12 a2 2 0 0 0 2-3 l-5-9 V3 z M9 3 h6" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+      <span>Testing</span>
+    </a>
+    <a href="#risks" class="nav-item" data-nav="risks">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3 L22 21 H2 z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M12 10 v5 M12 18 v1" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span>Risks &amp; Safety</span>
+    </a>
+
+    <div class="nav-group-label">Workspace</div>
+    <a href="#activity" class="nav-item" data-nav="activity">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 17 L9 11 L13 15 L21 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Activity Log</span>
+    </a>
+    <a href="#settings" class="nav-item" data-nav="settings">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 8 a4 4 0 1 0 0 8 a4 4 0 0 0 0-8 M4 12 h2 M18 12 h2 M12 4 v2 M12 18 v2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <span>Settings</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="team-mini">
+      <div class="avatar avatar-a" data-member="A">A</div>
+      <div class="avatar avatar-b" data-member="B">B</div>
+      <span class="team-mini-label">2 members</span>
+    </div>
+    <div class="sidebar-footer-row">
+      <span class="muted tiny">v<span id="app-version">1.0.0</span></span>
+      <a class="gh-link" href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 2 a10 10 0 0 0-3.16 19.49 c0.5 0.09 0.68-0.22 0.68-0.48 v-1.69 c-2.78 0.6-3.37-1.34-3.37-1.34 c-0.45-1.15-1.11-1.46-1.11-1.46 c-0.91-0.62 0.07-0.61 0.07-0.61 c1 0.07 1.53 1.03 1.53 1.03 c0.89 1.52 2.34 1.08 2.91 0.83 c0.09-0.65 0.35-1.08 0.64-1.33 c-2.22-0.25-4.56-1.11-4.56-4.94 c0-1.09 0.39-1.98 1.03-2.68 c-0.1-0.25-0.45-1.27 0.1-2.65 c0 0 0.84-0.27 2.75 1.02 a9.53 9.53 0 0 1 5 0 c1.91-1.29 2.75-1.02 2.75-1.02 c0.55 1.38 0.2 2.4 0.1 2.65 c0.64 0.7 1.03 1.59 1.03 2.68 c0 3.84-2.34 4.69-4.57 4.94 c0.36 0.31 0.68 0.92 0.68 1.85 v2.74 c0 0.27 0.18 0.58 0.69 0.48 A10 10 0 0 0 12 2" fill="currentColor"/></svg>
+      </a>
+    </div>
+  </div>
+</aside>
+
+<div id="sidebar-backdrop" class="sidebar-backdrop" aria-hidden="true"></div>
+
+
+<!-- ============================================================
+     MAIN WRAP
+     ============================================================ -->
+<div class="main-wrap">
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <button id="sidebar-open" class="icon-btn menu-btn" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 6 h16 M4 12 h16 M4 18 h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <div class="topbar-title">
+    <h1 id="view-title">Home</h1>
+    <p id="view-subtitle" class="muted small">PerfCore — root-only Android performance module</p>
+  </div>
+  <div class="topbar-actions">
+    <div id="save-indicator" class="save-indicator" title="Autosaves to browser localStorage">
+      <span class="dot"></span><span id="save-text">Saved</span>
+    </div>
+    <button id="btn-export" class="btn btn-ghost" title="Download JSON backup">
+      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 3 v12 M7 10 l5 5 5-5 M5 21 h14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Export</span>
+    </button>
+    <button id="btn-add-task" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 5 v14 M5 12 h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span>New Task</span>
+    </button>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     VIEW: HOME
+     ============================================================ -->
+<main id="view-home" class="view" data-view="home">
+  <section class="hero-big">
+    <div class="hero-kicker">
+      <span class="pill pill-green">ROOT ONLY</span>
+      <span class="pill pill-blue">SNAPDRAGON-AWARE</span>
+      <span class="pill pill-purple">OFFLINE-FIRST</span>
+      <span class="pill pill-yellow">2-PERSON TEAM</span>
+    </div>
+    <h1 class="hero-title">Extract every frame<br/>from low-end hardware.</h1>
+    <p class="hero-lede">
+      PerfCore is a <strong>root-only Android performance module</strong> built for Snapdragon devices that
+      people actually own — phones that shipped with 3 GB RAM and a mid-range SoC, and got abandoned by
+      their manufacturer's software updates long before their hardware gave up. Our primary test device is
+      a <strong>Samsung Galaxy A11 (SDM450, 3 GB RAM, Adreno 506)</strong>.
+    </p>
+    <p class="hero-lede">
+      This page is our <strong>shared workspace</strong>. It's not just a tracker — it's the project's brain.
+      If you're a new teammate, read top to bottom in the sidebar order. If you're the coder, jump
+      straight to <a href="#tasks" class="link" data-nav="tasks">Tasks</a>. If you're stuck, hit
+      <a href="#reference" class="link" data-nav="reference">Sysfs Bible</a>. Nothing on this page needs a network — it's a static site.
+    </p>
+    <div class="hero-cta">
+      <a href="#how" class="btn btn-primary btn-lg" data-nav="how">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M5 12 h14 M13 6 l6 6 -6 6" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Start reading — How It Works
+      </a>
+      <a href="#roadmap" class="btn btn-ghost btn-lg" data-nav="roadmap">See the 16-week plan →</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-label">Overall progress</div>
+      <div class="stat-value"><span id="stat-progress">0</span>%</div>
+      <div class="progress"><div id="bar-progress" class="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Tasks done</div>
+      <div class="stat-value"><span id="stat-done">0</span><span class="stat-value-muted"> / <span id="stat-total">0</span></span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Current week</div>
+      <div class="stat-value">W<span id="stat-week">1</span><span class="stat-value-muted"> / 16</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Blocked tasks</div>
+      <div class="stat-value stat-warn"><span id="stat-blocked">0</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">In progress</div>
+      <div class="stat-value"><span id="stat-progress-tasks">0</span></div>
+    </div>
+  </section>
+
+  <!-- QUICK CARDS -->
+  <section class="quick-grid">
+    <a href="#vision" class="quick-card" data-nav="vision">
+      <div class="quick-icon quick-icon-green">
+        <svg viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/><path d="M2 12 s3-6 10-6 s10 6 10 6 s-3 6-10 6 S2 12 2 12" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </div>
+      <h3>Vision &amp; Purpose</h3>
+      <p>Why PerfCore exists. Who it's for. What "success" actually means. The one-page pitch.</p>
+    </a>
+    <a href="#how" class="quick-card" data-nav="how">
+      <div class="quick-icon quick-icon-blue">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M9 3 h6 v4 h-6 z M6 9 h12 v4 h-12 z M9 15 h6 v6 h-6 z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>How It Works</h3>
+      <p>Android internals for the whole team. Root, Magisk, sysfs, governors, LMK, ZRAM — explained plain.</p>
+    </a>
+    <a href="#reference" class="quick-card" data-nav="reference">
+      <div class="quick-icon quick-icon-yellow">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 4 h16 v16 H4 z M8 4 v16" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Sysfs Bible</h3>
+      <p>Every sysfs path, every value, every rollback. The coder's daily reference card.</p>
+    </a>
+    <a href="#tasks" class="quick-card" data-nav="tasks">
+      <div class="quick-icon quick-icon-purple">
+        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 6 h3 M4 12 h3 M4 18 h3 M9 6 h11 M9 12 h11 M9 18 h11" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      </div>
+      <h3>Live Tasks</h3>
+      <p>The work queue. Filter, assign, mark done. Progress updates in real time. Autosaved locally.</p>
+    </a>
+  </section>
+
+  <!-- RECENT ACTIVITY + NEXT UP -->
+  <section class="dash-grid">
+    <div class="card">
+      <div class="card-head">
+        <h3>What's next</h3>
+        <select id="nextup-filter" class="input input-sm" aria-label="Filter next up">
+          <option value="all">All owners</option>
+          <option value="A">Member A</option>
+          <option value="B">Member B</option>
+          <option value="unassigned">Unassigned</option>
+        </select>
+      </div>
+      <ul id="nextup-list" class="task-list compact">
+        <li class="empty">Loading…</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <h3>Recent activity</h3>
+        <a href="#activity" class="link small" data-nav="activity">Full log →</a>
+      </div>
+      <ul id="dash-activity" class="activity-list">
+        <li class="empty">No activity yet.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONSTRAINTS -->
+  <section class="dash-section">
+    <div class="card card-warn">
+      <div class="card-head"><h3>⚠ Six non-negotiable constraints</h3></div>
+      <p class="muted small">Every design decision, every line of code, every commit is checked against these six rules. If a change violates any of them, it's rejected — no exceptions, no "but it makes benchmarks faster".</p>
+      <ol class="constraint-grid">
+        <li><strong>Root only.</strong> Magisk / KernelSU. We do not build a non-root fallback path. Root is the required setup, and the README says so.</li>
+        <li><strong>Hardware safety first.</strong> CPU ≤ 75 °C, GPU ≤ 70 °C — always. Auto-revert to stock on breach. Never disable thermal entirely; only raise trip points by a maximum of +5 °C.</li>
+        <li><strong>Boot-loop protection.</strong> A watchdog counts failed boots. Three in a row → automatic rollback to stock profile.</li>
+        <li><strong>Offline only.</strong> No telemetry, no analytics, no network calls. The APK does not declare the INTERNET permission. The Magisk module does not phone home.</li>
+        <li><strong>Lightweight.</strong> APK + Magisk module combined &lt; 15 MB. The TFLite model alone &lt; 2 MB.</li>
+        <li><strong>Everything revertible.</strong> Every tweak has a matching revert function. Every script is idempotent — safe to run twice.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- DEVICE -->
+  <section class="dash-section">
+    <div class="card">
+      <div class="card-head"><h3>Primary device target</h3></div>
+      <div class="specs-grid">
+        <div class="spec"><span class="spec-label">Model</span><span class="spec-value">Samsung Galaxy A11</span></div>
+        <div class="spec"><span class="spec-label">Codename</span><span class="spec-value"><code>a11</code></span></div>
+        <div class="spec"><span class="spec-label">SoC</span><span class="spec-value">Qualcomm Snapdragon 450 (SDM450)</span></div>
+        <div class="spec"><span class="spec-label">CPU</span><span class="spec-value">8× Cortex-A53 @ 1.8 GHz — <strong>single cluster, NOT big.LITTLE</strong></span></div>
+        <div class="spec"><span class="spec-label">GPU</span><span class="spec-value">Adreno 506</span></div>
+        <div class="spec"><span class="spec-label">RAM</span><span class="spec-value">3 GB (LPDDR3)</span></div>
+        <div class="spec"><span class="spec-label">Storage</span><span class="spec-value">32 / 64 GB eMMC 5.1</span></div>
+        <div class="spec"><span class="spec-label">OS</span><span class="spec-value">Android 10–12 (One UI Core), Knox-protected</span></div>
+        <div class="spec"><span class="spec-label">Root</span><span class="spec-value">Magisk or KernelSU</span></div>
+        <div class="spec"><span class="spec-label">Kernel</span><span class="spec-value">4.9.x (Qualcomm LK)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO USE THIS PAGE -->
+  <section class="dash-section">
+    <div class="card">
+      <div class="card-head"><h3>How to use this page (for the team)</h3></div>
+      <div class="usage-grid">
+        <div class="usage-item">
+          <div class="usage-num">1</div>
+          <h4>If you're the plan-maker</h4>
+          <p>Use <a href="#roadmap" class="link" data-nav="roadmap">Roadmap</a> to explain the phases. Use <a href="#tasks" class="link" data-nav="tasks">Tasks</a> to create work. Use <a href="#team" class="link" data-nav="team">Team</a> to assign owners. Export JSON every Friday as a backup.</p>
+        </div>
+        <div class="usage-item">
+          <div class="usage-num">2</div>
+          <h4>If you're the coder</h4>
+          <p>Read <a href="#how" class="link" data-nav="how">How It Works</a> once. Then use <a href="#reference" class="link" data-nav="reference">Sysfs Bible</a> daily. Every tunable has: path, stock value, our value, why, verification command, rollback. Never guess a value.</p>
+        </div>
+        <div class="usage-item">
+          <div class="usage-num">3</div>
+          <h4>Coordination rule</h4>
+          <p>Every completed task gets marked done the same day. Every blocker gets status = <code>blocked</code> and a one-line reason in Notes. If a task takes &gt; 2× estimate, ping the other person.</p>
+        </div>
+        <div class="usage-item">
+          <div class="usage-num">4</div>
+          <h4>Weekly ritual (Friday)</h4>
+          <p>15-minute sync: what shipped, what blocked, what changed. Update the current week number in Settings. Export JSON. Tag any task that broke the constraints. Then close the laptop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<!-- ============================================================
+     VIEW: VISION & PURPOSE
+     ============================================================ -->
+<main id="view-vision" class="view" data-view="vision" hidden>
+  <section class="section-head">
+    <h1>Vision &amp; Purpose</h1>
+    <p class="muted">Read this first. If you disagree with anything here, stop and talk to the other person before writing code.</p>
+  </section>
+
+  <article class="prose card">
+    <h2>The problem</h2>
+    <p>In 2020 Samsung sold the Galaxy A11 for about $150. It has a Snapdragon 450 — an SoC Qualcomm designed in 2017 for mid-range phones. 8 Cortex-A53 cores at 1.8 GHz. 3 GB of RAM. An Adreno 506 GPU. On paper, it runs Android. In practice, after two or three years of One UI Core updates, it doesn't anymore.</p>
+    <p>Tap an app icon. Wait four seconds. The keyboard takes two seconds to appear. Switching between two apps reloads both. Games that ran at 30 FPS now stutter at 18. This isn't because the hardware is broken — it's because <strong>the software stack was tuned for devices with 8 GB RAM and a big.LITTLE CPU</strong>, and Samsung's aggressive background killing + Android's default VM tuning are fundamentally mismatched with SDM450's capabilities.</p>
+    <p>The hardware can still do more. It's just configured wrong.</p>
+
+    <h2>The vision</h2>
+    <p><strong>PerfCore is the last thing you install on an old Snapdragon phone before you finally give up on it.</strong> It's a root-only Magisk module + companion app that:</p>
+    <ul>
+      <li>Rewrites the scheduler, VM, LMK, ZRAM, I/O, and GPU policies to match what an SDM450 can actually sustain.</li>
+      <li>Uses a tiny on-device AI model to swap between four tuning profiles (GAMING / MULTITASK / IDLE / THERMAL_EMERGENCY) based on what you're actually doing right now.</li>
+      <li>Never breaks the device. Every tweak has a hard ceiling, an auto-revert, and a boot-loop watchdog. The worst-case outcome is "it uninstalls itself and you're back on stock".</li>
+      <li>Never phones home. No telemetry, no analytics, no accounts, no ads, no internet permission.</li>
+      <li>Is distributed on GitHub, not the Play Store, because rooting a device to make it faster is not something Google should have opinions about.</li>
+    </ul>
+
+    <h2>What "success" means</h2>
+    <p>Not "10× faster benchmarks". That's marketing. Real success, measurable, on the A11:</p>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>Metric</th><th>Stock (typical)</th><th>Success target</th></tr></thead>
+        <tbody>
+          <tr><td>Cold-start, Chrome</td><td>3.8 s</td><td>≤ 2.4 s (−35%)</td></tr>
+          <tr><td>Cold-start, WhatsApp</td><td>2.9 s</td><td>≤ 1.9 s (−35%)</td></tr>
+          <tr><td>Cold-start, Gallery</td><td>4.1 s</td><td>≤ 2.6 s (−35%)</td></tr>
+          <tr><td>FPS, Subway Surfers (2D)</td><td>~28–34, drops to 18</td><td>≥ 28 sustained, no drops below 25</td></tr>
+          <tr><td>Free RAM at idle</td><td>~600 MB</td><td>≥ 900 MB</td></tr>
+          <tr><td>App switch reload (WhatsApp ↔ Chrome)</td><td>Almost always reloads</td><td>Reloads &lt; 30% of the time</td></tr>
+          <tr><td>Battery drain (idle, screen on)</td><td>~11% / hour</td><td>≤ 15% / hour (acceptable tradeoff)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Battery drain is the deliberate cost.</strong> We accept it. We say so up front. This module is for people who have decided their phone's responsiveness matters more than an extra hour of screen-on time. If you disagree, don't use it.</p>
+
+    <h2>What we are NOT building</h2>
+    <ul>
+      <li><strong>Not a cleaner / booster / RAM-freeer.</strong> Those are scams. Free RAM is wasted RAM. We tune <em>how</em> RAM is used, not how much is free.</li>
+      <li><strong>Not a custom kernel.</strong> We're using Samsung's stock kernel, just tuning it. Custom kernels come in v3 (see <a href="#future" class="link" data-nav="future">Future Plans</a>).</li>
+      <li><strong>Not a game booster / cheat engine.</strong> No FPS unlock hacks, no anti-cheat bypass. Just legitimate sysfs tuning.</li>
+      <li><strong>Not a paid app, not a subscription, not a "pro" tier.</strong> Free, open-source, on GitHub.</li>
+      <li><strong>Not a general-purpose tuner.</strong> The primary target is SDM450. We support SDM439, SDM660, SDM665, SDM680, SDM695 as secondary (Phase 5+). We do not promise results on MediaTek or Exynos.</li>
+    </ul>
+
+    <h2>The two-person rule</h2>
+    <p>There are two of us. That means:</p>
+    <ul>
+      <li>Every commit is reviewed by the other person (even just "looks fine, push").</li>
+      <li>No one ships a sysfs write to a live device unless it has been tested on the A11 first.</li>
+      <li>If we disagree on a design decision, the person whose <em>phase</em> it belongs to wins — but the other person's objection goes in the commit message.</li>
+      <li>If we get stuck for more than 48 hours on something, we scope it down or defer it. Momentum matters more than perfection.</li>
+    </ul>
+
+    <h2>What this page is for</h2>
+    <p>This page replaces:</p>
+    <ul>
+      <li>A WhatsApp thread full of half-remembered sysfs paths.</li>
+      <li>A Google Sheet nobody updates.</li>
+      <li>A Notion page with broken links.</li>
+      <li>Me trying to explain "so schedutil's rate_limit_us is basically the frequency decision interval" over voice notes at 2 AM.</li>
+    </ul>
+    <p>Everything is here. Static, offline, versionable, backed up by export. If the internet is gone tomorrow, this page still works.</p>
+  </article>
+</main>
+
+
+<!-- ============================================================
+     VIEW: HOW IT WORKS (educational deep dive)
+     ============================================================ -->
+<main id="view-how" class="view" data-view="how" hidden>
+  <section class="section-head">
+    <h1>How It Works</h1>
+    <p class="muted">The full mental model of the project. Read once, refer back often. No prerequisite knowledge assumed.</p>
+  </section>
+
+  <article class="prose card">
+    <h2>1. What is root, and why do we need it?</h2>
+    <p>On a normal Android phone, apps run in a sandbox. They can't read files outside their own folder, they can't call system APIs without the OS's permission, and they definitely can't write to kernel parameters. This is by design — it's what keeps your banking app safe from a sketchy flashlight app.</p>
+    <p><strong>Root</strong> is when the OS's superuser account (UID 0) is accessible to you. Every Android kernel has UID 0 — it's how the OS itself controls hardware. Root just means you get to use it.</p>
+    <p>We need root because <strong>the tuning we do is kernel-level</strong>. Writing to <code>/sys/devices/system/cpu/cpufreq/policy0/schedutil/rate_limit_us</code> is not something the OS lets a normal app do — it's a direct kernel parameter. Only UID 0 can touch it.</p>
+    <p>There is no workaround. No "rootless" version of PerfCore. No ADB-based workaround that survives a reboot. If you don't have root, you're not the target audience.</p>
+
+    <h2>2. What is Magisk, and what's a "module"?</h2>
+    <p><strong>Magisk</strong> is the most popular way to root an Android phone today. It works by patching the boot image — your phone's kernel is unmodified, but at boot, Magisk injects a small init binary that gives you root and hooks the filesystem.</p>
+    <p>A <strong>Magisk module</strong> is a zip file that Magisk unpacks into <code>/data/adb/modules/&lt;name&gt;/</code>. It contains three important files Magisk runs automatically:</p>
+    <ul>
+      <li><code>post-fs-data.sh</code> — runs <strong>very early</strong> at boot, after <code>/data</code> is mounted but before most system services start. Good for VM tuning, ZRAM setup, I/O scheduler changes. <strong>Do not</strong> run CPU governor tuning here — cpufreq isn't initialized yet.</li>
+      <li><code>service.sh</code> — runs <strong>late</strong> at boot, after <code>bootanim</code> exits. Good for CPU governor, GPU, thermal. Runs as root.</li>
+      <li><code>uninstall.sh</code> — runs when the module is removed. Must restore the device to stock. This is our safety net.</li>
+    </ul>
+    <p>Everything else in the module folder — our <code>bin/*.sh</code> scripts, profiles, the AI daemon — is just data. Magisk doesn't touch it; our scripts call it.</p>
+    <p><strong>KernelSU</strong> is an alternative to Magisk. Same module format, same lifecycle. Our module works on both — we do not depend on Magisk-specific APIs.</p>
+
+    <h2>3. What is sysfs?</h2>
+    <p>Linux exposes most of its runtime configuration as <strong>files</strong> under <code>/sys</code>. Reading a file gives you the current value; writing to it changes the setting. It's not a config file — it's a live interface into the kernel.</p>
+    <p>Example: <code>/sys/devices/system/cpu/cpufreq/policy0/scaling_governor</code></p>
+    <pre class="code"><code>$ cat /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+schedutil
+
+$ echo performance > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+$ cat /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+performance</code></pre>
+    <p>Some sysfs files only accept specific values (you can't set a governor to "banana"), some are read-only, some don't exist on your kernel. <strong>Our code always checks existence and write-permission before writing.</strong> If a tunable isn't present on this specific A11 build, we log <code>skip:not-present</code> and move on. We never crash on a missing file.</p>
+
+    <h2>4. CPU governors — what is schedutil?</h2>
+    <p>A CPU <strong>governor</strong> is the kernel component that decides what frequency to run the CPU at, based on current load. On SDM450 you'll typically see these available: <code>schedutil performance powersave</code>.</p>
+    <ul>
+      <li><strong>performance</strong> — pins CPU to max frequency. Fastest, but battery dies in 2 hours. Never use this permanently.</li>
+      <li><strong>powersave</strong> — pins CPU to min frequency. Battery lasts forever, phone feels broken. Never use this.</li>
+      <li><strong>schedutil</strong> — the modern Android governor. Reads the scheduler's load estimate every tick and picks frequency accordingly. <strong>This is what we use.</strong></li>
+    </ul>
+    <p>schedutil has a tunable: <code>rate_limit_us</code>. It controls how often schedutil is allowed to change frequency. Default is ~10,000 microseconds (10 ms). By setting it to <strong>0</strong>, schedutil re-evaluates on every scheduler tick (~4 ms). More responsive, slightly higher power draw. That's the tradeoff we accept.</p>
+    <p>There's also <code>uclamp_min</code> — a "floor" on the CPU capacity that the scheduler will give to a task group. If we set <code>uclamp_min = 700</code> on the <code>top-app</code> cgroup (the currently-visible app), the scheduler guarantees that app gets at least ~68% of CPU capacity. It doesn't pin the CPU, it just biases decisions. When the app goes to background, uclamp goes back to 0. This is how we get foreground responsiveness without baking the whole system at high frequency.</p>
+
+    <h2>5. Kernel scheduler tunables</h2>
+    <p>Beyond CPU frequency, the scheduler itself has tuning knobs under <code>/proc/sys/kernel/</code>. The three we touch:</p>
+    <ul>
+      <li><code>sched_min_granularity_ns</code> (default 3,000,000 = 3 ms) — minimum time a task runs before it can be preempted. Lower = more responsive to bursts, more context switches. We set <strong>1,000,000</strong> (1 ms) so foreground tasks don't get stuck behind background tasks.</li>
+      <li><code>sched_migration_cost_ns</code> (default 500,000) — how "expensive" it is to migrate a task to another CPU. On a single-cluster SoC, migrating is cheap (all cores share cache). We <strong>keep it at 500,000</strong> — no change needed, but documented for reference.</li>
+      <li><code>sched_nr_migrate</code> (default 32) — how many tasks can be migrated at once during load balance. We <strong>keep it at 32</strong> — increasing it costs latency more than it saves.</li>
+    </ul>
+    <p><strong>Core offlining:</strong> Some tuners turn off cores to "save battery". On SDM450 this is actively harmful — all 8 cores are identical A53s, so offlining one just makes the remaining seven hotter and slower. We do not offline cores. Ever.</p>
+
+    <h2>6. Memory — LMK vs LMKD vs PSI</h2>
+    <p>Android has to kill apps to make room for new ones. There are three ways this can happen, and we have to detect which one your kernel uses:</p>
+    <ul>
+      <li><strong>Classic LMK</strong> — <code>/sys/module/lowmemorykiller/parameters/minfree</code>. You set six thresholds. When free RAM drops below a threshold, apps below the corresponding <code>oom_adj</code> level get killed. Old, predictable, still works.</li>
+      <li><strong>PSI LMKD</strong> — <code>/proc/pressure/memory</code>. Modern Android (10+) uses kernel-provided Pressure Stall Information. Instead of "kill when RAM is low", it says "kill when memory allocation stalls are happening at this rate". Tuned via <code>ro.lmk.*</code> properties. This is what One UI Core on A11 mostly uses.</li>
+      <li><strong>LMKD in userspace</strong> — <code>lmkd</code> daemon reads PSI and decides. Uses <code>ro.lmk.*</code> props.</li>
+    </ul>
+    <p><strong>We cannot just pick one and apply it.</strong> If we write to <code>minfree</code> on a PSI kernel, nothing happens (wrong interface). If we write <code>ro.lmk.*</code> props on a classic kernel, nothing happens either. Phase 2 starts with <code>detect.sh</code> which figures out which one is live, and the tuning branch follows that.</p>
+
+    <h2>7. ZRAM — compressed swap</h2>
+    <p>ZRAM is a block device that lives in RAM. You write to it, it compresses your data, and stores the compressed version back in RAM. When you read, it decompresses transparently. Net effect: <strong>you get more usable RAM, at the cost of CPU cycles</strong>.</p>
+    <p>On a 3 GB device, having a 1.8 GB ZRAM (60% of MemTotal) lets Android hold ~50% more apps in the background before killing them. Compression algorithm matters:</p>
+    <ul>
+      <li><code>lzo</code> — old, fast decompress, mediocre ratio. Meh.</li>
+      <li><code>lz4</code> — <strong>our pick</strong>. Fastest decompress (which is what matters — reads block UI), decent ratio.</li>
+      <li><code>lz4hc</code> — better ratio, slower compress. Good fallback.</li>
+      <li><code>zstd</code> — best ratio, slowest on SDM450's A53 cores. Only if lz4 not available.</li>
+    </ul>
+    <p>On A11, ZRAM is already enabled with <code>lzo</code> by default and sized ~1 GB. We resize to 1.8 GB and change to <code>lz4</code> (if available). This is safe — ZRAM resize is a standard <code>swapoff / reset / swapon</code> cycle.</p>
+
+    <h2>8. I/O scheduler</h2>
+    <p>The I/O scheduler decides how read/write requests to storage are ordered and merged. eMMC 5.1 storage on A11 is the slowest part of the system. Bad scheduling makes app launches feel laggy even when the CPU is idle.</p>
+    <ul>
+      <li><code>noop</code> — pure FCFS, no reordering. Fine for SSDs that do their own scheduling.</li>
+      <li><code>deadline</code> — <strong>our pick for A11</strong>. Every request gets a deadline; closest-to-deadline requests are served first. Balances throughput vs latency.</li>
+      <li><code>cfq</code> — Completely Fair Queuing. Fair across processes, but overkill for phones and adds latency. Stock on A11.</li>
+      <li><code>bfq</code> — even more complex, higher latency. Not on this kernel.</li>
+    </ul>
+    <p><code>read_ahead_kb</code> controls how much extra data the kernel pre-reads on each I/O. Default 128 KB is too small for eMMC; we set <strong>2048 KB</strong>, which matches the read-cache burst size. Feels noticeably faster on app cold-starts.</p>
+
+    <h2>9. GPU tuning (Adreno 506)</h2>
+    <p>Adreno GPUs are controlled via <code>/sys/class/kgsl/kgsl-3d0/devfreq/</code>. The two governors you care about:</p>
+    <ul>
+      <li><code>msm-adreno-tz</code> — Qualcomm's default. Uses a thermal-zone-aware heuristic to pick GPU frequency. <strong>Default choice, keep it.</strong></li>
+      <li><code>performance</code> — pins GPU to max frequency. Hot. Only use during gaming sessions.</li>
+    </ul>
+    <p>Our AI daemon swaps to <code>performance</code> only when it detects gaming (foreground package is a known game AND battery temp is below 45 °C). Outside gaming, we leave it on <code>msm-adreno-tz</code>. If gaming raises the temp above 70 °C, GPU auto-reverts to <code>msm-adreno-tz</code> immediately.</p>
+    <p><strong>We never lock max GPU frequency permanently.</strong> Ever. Adreno 506 gets to 90 °C quickly and that damages the SoC.</p>
+
+    <h2>10. Thermal</h2>
+    <p>SDM450 has several thermal zones exposed at <code>/sys/class/thermal/thermal_zone*/</code>. Each zone has a <code>temp</code> (millidegrees C) and a <code>trip_point_N_temp</code>. When a zone crosses a trip point, the thermal HAL takes action (throttle CPU, throttle GPU, cap charging, etc).</p>
+    <p>Our approach:</p>
+    <ul>
+      <li>Read all zones, identify CPU and GPU zones by name (often <code>cpu-0-0-usr</code>, <code>gpuss-0-usr</code>).</li>
+      <li><strong>Raise trip points by +5 °C, max.</strong> This delays throttling slightly, giving us more headroom before the SoC heats up. Not a bypass — just a small delay.</li>
+      <li><strong>Never disable thermal.</strong> Never set a trip to <code>disabled</code>. Ever.</li>
+      <li><strong>Hard ceiling check:</strong> a small loop every 5 seconds reads CPU temp. If &gt; 75 °C, immediately revert all tuning and let the stock governor cool it down. Log <code>THERMAL_EMERGENCY</code> to the applied log.</li>
+    </ul>
+
+    <h2>11. The AI daemon</h2>
+    <p>This is the "smart" part. A small binary (Kotlin or Go) that runs as a background service, waking every 2 seconds, doing this cycle:</p>
+    <pre class="code"><code>1. Collect features:
+   - foreground_package: e.g. "com.whatsapp"
+   - screen_state: on / off
+   - battery_temp: from /sys/class/power_supply/battery/temp
+   - cpu_load_2s: from /proc/stat delta over 2s
+   - ram_pressure: from /proc/pressure/memory
+   - charging: from /sys/class/power_supply/battery/status
+
+2. Run TFLite model → outputs one of:
+   - GAMING
+   - MULTITASK
+   - IDLE
+   - THERMAL_EMERGENCY
+
+3. If confidence < 0.7, fall back to rule-based decision:
+   - temp > 70 → THERMAL_EMERGENCY
+   - fg is game → GAMING
+   - screen off → IDLE
+   - else → MULTITASK
+
+4. Apply profile → write sysfs values for that profile.
+
+5. Log the decision and confidence.</code></pre>
+    <p>Each profile is a set of sysfs values. GAMING = GPU performance + uclamp boost + aggressive read-ahead. IDLE = conservative schedutil + GPU powersave. Etc.</p>
+    <p>Over time, the daemon also records which profile produced the best user-perceived result (measured by "did the user interact with this app within 5 seconds of switching to it?"), and stores it in a Room DB. Next time the same app opens, it prioritizes the profile that worked.</p>
+
+    <h2>12. The boot-loop watchdog</h2>
+    <p>Bad tuning can prevent boot. To prevent bricking:</p>
+    <ul>
+      <li>The module contains <code>bin/watchdog.sh</code>.</li>
+      <li>Every successful boot increments a counter: <code>/data/adb/perfcore/boot_ok_count</code>.</li>
+      <li>If boot fails (kernel panic, bootloop), the counter doesn't increment.</li>
+      <li>If the module's <code>service.sh</code> detects 3 consecutive failed boots (counter unchanged), it:</li>
+      <li>Renames the module folder with a <code>.disabled</code> suffix (Magisk respects this — module won't load).</li>
+      <li>Logs <code>SAFETY: auto-disabled after 3 failed boots</code>.</li>
+      <li>Requires the user to manually re-enable from Magisk app.</li>
+    </ul>
+    <p>This guarantees: <em>worst case, the module disables itself and you boot stock.</em> No soft-bricks. Ever.</p>
+
+    <h2>13. Knox, on the A11 specifically</h2>
+    <p>Samsung's Knox is a hardware-backed security framework. On the A11, <code>ro.config.knox = v30</code>. Knox 3.0 does several things:</p>
+    <ul>
+      <li><strong>Trips a hardware fuse</strong> when you unlock the bootloader. Once tripped, Samsung Pay, Secure Folder, and some banking apps stop working. This is unavoidable — but it's already tripped if you're rooted.</li>
+      <li><strong>Reverts certain system properties</strong> at boot if they don't match expected values. Specifically, some <code>ro.*</code> properties are watched. Setting them from <code>post-fs-data.sh</code> usually works because we're earlier than Knox's check.</li>
+      <li><strong>Does NOT revert sysfs writes.</strong> Writing to <code>/sys/devices/...</code> is invisible to Knox. Our tuning is safe.</li>
+    </ul>
+    <p>Where we use property writes (<code>ro.lmk.*</code>), we wrap them in a Knox check: if <code>ro.config.knox</code> is not <code>0</code> or empty, we skip those writes and log <code>skip:knox</code>. Not because it'll break, but because Knox may silently revert them 30 seconds later, causing our state tracking to be wrong.</p>
+
+    <h2>14. Idempotency — why every script is safe to re-run</h2>
+    <p>Every <code>tune-*.sh</code> follows this pattern:</p>
+    <pre class="code"><code>if [ -w "$path" ]; then
+  old=$(cat "$path")
+  echo "$new_value" > "$path"
+  new=$(cat "$path")
+  log "$path" "$old" "$new" "$([ "$new" = "$new_value" ] &amp;&amp; echo ok || echo fail)"
+else
+  log "$path" "-" "-" "skip:not-present"
+fi</code></pre>
+    <p>Run it once: you see <code>old=10000 new=0 status=ok</code>.<br/>
+       Run it again: you see <code>old=0 new=0 status=ok</code>.</p>
+    <p>Same system state. New log line. No drift. This matters because:</p>
+    <ul>
+      <li>The daemon might call <code>tune-cpu.sh --uclamp 700</code> every few seconds. It must never corrupt state.</li>
+      <li>After a reboot, sysfs resets to stock; the script re-applies. Idempotency = safety.</li>
+      <li>If a human runs the script while tuning, nothing breaks.</li>
+    </ul>
+  </article>
+</main>
+
+
+<!-- ============================================================
+     VIEW: ROADMAP
+     ============================================================ -->
+<main id="view-roadmap" class="view" data-view="roadmap" hidden>
+  <section class="section-head">
+    <h1>Roadmap — 16 weeks</h1>
+    <p class="muted">Solo-dev scale, extended for two people. Every phase is shippable independently. If Phase 4 never happens, Phase 1–3 are still useful.</p>
+  </section>
+
+  <div class="roadmap-legend">
+    <span class="legend-item"><span class="dot dot-gray"></span>Not started</span>
+    <span class="legend-item"><span class="dot dot-blue"></span>In progress</span>
+    <span class="legend-item"><span class="dot dot-green"></span>Complete</span>
+    <span class="legend-item"><span class="dot dot-red"></span>Blocked</span>
+  </div>
+
+  <div class="timeline" id="roadmap-timeline">
+
+    <!-- PHASE 1 -->
+    <article class="timeline-phase" data-phase="1">
+      <div class="timeline-marker"><div class="marker-dot phase-1"></div><div class="marker-label">W1–W3</div></div>
+      <div class="timeline-body card">
+        <div class="card-head">
+          <div>
+            <span class="pill pill-blue">PHASE 1 · Weeks 1–3</span>
+            <h3>Magisk skeleton + boot-loop safety net</h3>
+          </div>
+          <span class="phase-status" id="rm-status-1">pending</span>
+        </div>
+        <p class="phase-goal"><strong>Goal:</strong> a flashable module that never bricks the device. No aggressive tuning yet. Just the bones, the watchdog, and the stock snapshot for revert.</p>
+
+        <div class="phase-sections">
+          <div class="phase-section">
+            <h4>Why this phase matters</h4>
+            <p>Every other phase assumes "if it breaks, we can go back". If Phase 1 is wrong, Phase 2–5 could brick an A11 permanently. So we do the boring safety work first, prove it, then start tuning.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Deliverables</h4>
+            <ul class="check-list">
+              <li><code>module.prop</code> — module metadata (id, name, version, author)</li>
+              <li><code>post-fs-data.sh</code> — safe VM tuning only (<code>min_free_kbytes</code>)</li>
+              <li><code>service.sh</code> — safe CPU tuning only (<code>schedutil rate_limit_us = 0</code>)</li>
+              <li><code>uninstall.sh</code> — restores everything from the stock snapshot</li>
+              <li><code>bin/watchdog.sh</code> — 3-boot rollback</li>
+              <li><code>bin/snapshot-stock.sh</code> — reads and saves all current sysfs values</li>
+              <li><code>system.prop</code> — placeholder, no aggressive props yet</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Done criteria</h4>
+            <ul class="check-list">
+              <li>Module flashes via Magisk without error</li>
+              <li>Device boots normally 10 times in a row</li>
+              <li>Watchdog works: deliberately corrupt one sysfs value → reboot 3 times → module auto-disables</li>
+              <li><code>uninstall.sh</code> restores stock values verified by <code>cat</code></li>
+              <li>Zero ANRs, zero crashes during 24-hour soak</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Who does what</h4>
+            <p><strong>Member A (main coder):</strong> writes all scripts, module structure, watchdog logic.<br/>
+            <strong>Member B:</strong> does the A11 stock snapshot, tests every reboot, documents any weirdness.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Risks specific to this phase</h4>
+            <ul>
+              <li>Magisk flashes but module doesn't load → check <code>/data/adb/modules/perfcore/</code> exists and <code>disable</code> file is absent</li>
+              <li>Watchdog false positive → boot counter logic must only count boots where <code>service.sh</code> actually ran</li>
+              <li>Knox may log suspicious activity but does not interfere with sysfs writes at this phase</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PHASE 2 -->
+    <article class="timeline-phase" data-phase="2">
+      <div class="timeline-marker"><div class="marker-dot phase-2"></div><div class="marker-label">W4–W6</div></div>
+      <div class="timeline-body card">
+        <div class="card-head">
+          <div>
+            <span class="pill pill-green">PHASE 2 · Weeks 4–6</span>
+            <h3>Core tuning — CPU, memory, ZRAM, I/O</h3>
+          </div>
+          <span class="phase-status" id="rm-status-2">pending</span>
+        </div>
+        <p class="phase-goal"><strong>Goal:</strong> every sysfs tuning the module does, behind capability detection, with per-section toggles. If your kernel doesn't expose a tunable, we skip it cleanly.</p>
+
+        <div class="phase-sections">
+          <div class="phase-section">
+            <h4>Why this phase matters</h4>
+            <p>This is where the actual performance gain lives. CPU governor + scheduler + LMK + ZRAM + I/O account for ~85% of the perceived improvement on the A11. GPU and AI come later, but they're multipliers on top of this base.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Deliverables</h4>
+            <ul class="check-list">
+              <li><code>bin/detect.sh</code> → writes <code>/data/adb/perfcore/capabilities.json</code></li>
+              <li><code>bin/tune-cpu.sh</code> — schedutil rate_limit, uclamp function</li>
+              <li><code>bin/tune-sched.sh</code> — min_granularity, migration_cost, nr_migrate</li>
+              <li><code>bin/tune-mem.sh</code> — VM + LMK/LMKD branch</li>
+              <li><code>bin/tune-zram.sh</code> — resize + lz4</li>
+              <li><code>bin/tune-io.sh</code> — deadline, read_ahead, remount /data</li>
+              <li><code>bin/revert-all.sh</code> — full stock restore</li>
+              <li><code>config.json</code> — per-section boolean toggles</li>
+              <li><code>applied.log</code> — human-readable log of every change</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Done criteria</h4>
+            <ul class="check-list">
+              <li>Every script is idempotent (run twice → same state)</li>
+              <li>Every script logs <code>skip:not-present</code> instead of crashing when a tunable is missing</li>
+              <li>Detect correctly identifies A11's LMK type (<code>psi</code> expected)</li>
+              <li>Detect correctly identifies available governors, schedulers, ZRAM algorithms</li>
+              <li>Cold-start improves by ≥ 25% on 3 apps</li>
+              <li>Idle RAM usage drops by ≥ 200 MB (in a good way — more cached, not more free)</li>
+              <li>Uninstall restores everything</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Who does what</h4>
+            <p><strong>Member A:</strong> all six tune scripts + detect + revert + config bootstrap.<br/>
+            <strong>Member B:</strong> tests each script on the A11, writes the "expected output" column in the reference table, runs revert tests after every change.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Risks</h4>
+            <ul>
+              <li><strong>LMK branch confusion:</strong> if <code>detect.sh</code> says <code>psi</code> but the kernel actually runs classic LMK, our tuning goes to the wrong place. Verify with <code>dumpsys activity lru</code> after tuning — if app count in cached doesn't change, we're on the wrong branch.</li>
+              <li><strong>ZRAM resize on some kernels</strong> requires <code>swapoff</code> first — if you skip, resize fails silently. Our script does the full cycle.</li>
+              <li><strong>Mount remount of /data</strong> with <code>commit=60</code> — reduces fsync frequency, small data-loss window on power loss. Acceptable tradeoff, documented.</li>
+              <li><strong>Knox property reverts:</strong> <code>ro.lmk.*</code> writes may be silently reverted after 30s. We verify with read-back, log <code>skip:knox</code> if it fails.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PHASE 3 -->
+    <article class="timeline-phase" data-phase="3">
+      <div class="timeline-marker"><div class="marker-dot phase-3"></div><div class="marker-label">W7–W9</div></div>
+      <div class="timeline-body card">
+        <div class="card-head">
+          <div>
+            <span class="pill pill-yellow">PHASE 3 · Weeks 7–9</span>
+            <h3>GPU devfreq + thermal guard</h3>
+          </div>
+          <span class="phase-status" id="rm-status-3">pending</span>
+        </div>
+        <p class="phase-goal"><strong>Goal:</strong> GPU tuning with a hard thermal ceiling. Never disable thermal. Trip points +5 °C max. Gaming-session-only <code>performance</code> governor swap.</p>
+
+        <div class="phase-sections">
+          <div class="phase-section">
+            <h4>Why this phase matters</h4>
+            <p>SDM450's Adreno 506 is the GPU bottleneck for gaming and heavy UI (recents animations, launcher transitions). But it also runs hot fast. Phase 3 is 50% tuning, 50% safety engineering.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Deliverables</h4>
+            <ul class="check-list">
+              <li><code>bin/tune-gpu.sh</code> — devfreq governor control, no permanent lock</li>
+              <li><code>bin/tune-thermal.sh</code> — read zones, +5 °C trip points, never disable</li>
+              <li><code>bin/thermal-guard.sh</code> — 5-second poll, hard ceiling check, auto-revert</li>
+              <li><code>bin/sf-toggle.sh</code> — SurfaceFlinger 1008 toggle (default OFF)</li>
+              <li>Gaming profile in <code>profiles/sdm450_a11.json</code></li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Done criteria</h4>
+            <ul class="check-list">
+              <li>GPU governor is <code>msm-adreno-tz</code> outside gaming</li>
+              <li>Gaming detection triggers <code>performance</code> governor</li>
+              <li>10-minute Subway Surfers session never exceeds 70 °C</li>
+              <li>If temp &gt; 75 °C (CPU) or &gt; 70 °C (GPU), tuning auto-reverts within 5 seconds</li>
+              <li>SurfaceFlinger 1008 toggle doesn't crash UI on stock A11 (default OFF — test enable separately)</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Who does what</h4>
+            <p><strong>Member A:</strong> GPU + thermal scripts, thermal-guard logic.<br/>
+            <strong>Member B:</strong> runs the 10-minute stress test 3 times, documents temperature curves, decides the exact "hot" threshold based on real A11 data.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Risks</h4>
+            <ul>
+              <li><strong>Thermal zone names differ by kernel build.</strong> On some A11 firmware, CPU zone is <code>cpu-0-0-usr</code>; on others it's <code>soc-thermal</code>. Script must scan <code>thermal_zone*/type</code> and match by substring, not by fixed index.</li>
+              <li><strong>Adreno devfreq doesn't always accept writes.</strong> Some A11 kernels block GPU freq writes from userspace. Verify with <code>cat available_frequencies</code> and write test.</li>
+              <li><strong>SurfaceFlinger 1008 is dangerous on stock A11.</strong> It disables some UI latency features. Test on a spare A11 build if possible; otherwise default OFF and never enable automatically.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PHASE 4 -->
+    <article class="timeline-phase" data-phase="4">
+      <div class="timeline-marker"><div class="marker-dot phase-4"></div><div class="marker-label">W10–W12</div></div>
+      <div class="timeline-body card">
+        <div class="card-head">
+          <div>
+            <span class="pill pill-purple">PHASE 4 · Weeks 10–12</span>
+            <h3>AI daemon + TFLite model</h3>
+          </div>
+          <span class="phase-status" id="rm-status-4">pending</span>
+        </div>
+        <p class="phase-goal"><strong>Goal:</strong> a background service that swaps between four tuning profiles based on what's happening right now. Rule-based fallback if the model fails or confidence is low.</p>
+
+        <div class="phase-sections">
+          <div class="phase-section">
+            <h4>Why this phase matters</h4>
+            <p>Static tuning is 85% of the benefit. Adaptive tuning adds 10–15% more by avoiding the "one-size-fits-all" problem — gaming needs different tuning than idle needs different tuning than multitasking.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Deliverables</h4>
+            <ul class="check-list">
+              <li><code>ai-engine/model.tflite</code> — &lt; 2 MB, 4-class classifier</li>
+              <li><code>ai-engine/train.py</code> — offline trainer from logged data</li>
+              <li><code>ai-engine/dataset/</code> — logged features from real A11 usage</li>
+              <li><code>bin/perfcore-daemon</code> — Kotlin or Go binary, root-run</li>
+              <li>Room DB schema for per-app profile memory</li>
+              <li>Feature collection pipeline (logs to <code>/data/adb/perfcore/features/</code>)</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Done criteria</h4>
+            <ul class="check-list">
+              <li>Daemon runs continuously without battery drain &gt; 2%/hour</li>
+              <li>Model inference &lt; 15 ms on A11's A53 core</li>
+              <li>Confidence &lt; 0.7 → rule-based fallback works</li>
+              <li>GAMING profile triggers within 1 second of opening a game</li>
+              <li>THERMAL_EMERGENCY triggers within 5 seconds of temp &gt; 75 °C</li>
+              <li>Per-app memory persists across reboots</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Who does what</h4>
+            <p><strong>Member A:</strong> daemon implementation, TFLite inference wrapper, feature collection.<br/>
+            <strong>Member B:</strong> dataset collection (runs phone for 2 weeks logging features), TFLite model training using <code>train.py</code>, validates model on held-out data.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Risks</h4>
+            <ul>
+              <li><strong>Daemon dies silently.</strong> Magisk's <code>service.sh</code> should launch it, but if it crashes, no one notices. Add health check: every 30 seconds, <code>service.sh</code> checks daemon PID, restarts if absent.</li>
+              <li><strong>Model inference on A53 is slow.</strong> If &gt; 50 ms, throttle to every 5 seconds instead of 2. Log inference time.</li>
+              <li><strong>Dataset bias.</strong> If Member B's usage pattern is very different from real users, model generalizes poorly. Balance the dataset across all 4 classes.</li>
+              <li><strong>TFLite runtime size.</strong> The NNAPI delegate for TFLite alone is ~4 MB. Without NNAPI, inference is slower but binary is smaller. Start without NNAPI; add if needed.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- PHASE 5 -->
+    <article class="timeline-phase" data-phase="5">
+      <div class="timeline-marker"><div class="marker-dot phase-5"></div><div class="marker-label">W13–W16</div></div>
+      <div class="timeline-body card">
+        <div class="card-head">
+          <div>
+            <span class="pill pill-pink">PHASE 5 · Weeks 13–16</span>
+            <h3>Dashboard UI + stress testing</h3>
+          </div>
+          <span class="phase-status" id="rm-status-5">pending</span>
+        </div>
+        <p class="phase-goal"><strong>Goal:</strong> the Kotlin + Compose dashboard. Live stats, profile selector, per-app memory view. Final APK. And a full stress test before release.</p>
+
+        <div class="phase-sections">
+          <div class="phase-section">
+            <h4>Why this phase matters</h4>
+            <p>The scripts work without a UI, but a UI makes the project feel like a real product, not a collection of shell scripts. Also, the UI is how non-technical users would interact with PerfCore if it ever reached a wider audience.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Deliverables</h4>
+            <ul class="check-list">
+              <li>Kotlin + Compose app skeleton (min SDK 29)</li>
+              <li>libsu root shell wrapper</li>
+              <li>Live stats screen (CPU / GPU / RAM / temp)</li>
+              <li>Profile selector (GAMING / MULTITASK / IDLE / AUTO)</li>
+              <li>Per-app memory browser (Room DB)</li>
+              <li>Log viewer (applied.log formatted)</li>
+              <li>Release APK signed with project key</li>
+              <li>Full stress test suite passing</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Done criteria</h4>
+            <ul class="check-list">
+              <li>APK &lt; 8 MB (module + APK combined &lt; 15 MB)</li>
+              <li>Cold-start of dashboard &lt; 1 second</li>
+              <li>All 4 profile switches work without restart</li>
+              <li>Per-app memory has ≥ 20 entries after 1 week of use</li>
+              <li>10-minute gaming stress test: no crash, no thermal emergency</li>
+              <li>Full revert works via uninstall.sh after all phases applied</li>
+            </ul>
+          </div>
+
+          <div class="phase-section">
+            <h4>Who does what</h4>
+            <p><strong>Member A:</strong> app architecture, libsu integration, Compose screens.<br/>
+            <strong>Member B:</strong> UI/UX design (mockups before coding), stress testing, benchmark methodology.</p>
+          </div>
+
+          <div class="phase-section">
+            <h4>Risks</h4>
+            <ul>
+              <li><strong>APK + module size creep.</strong> Compose adds ~2 MB, TFLite ~2 MB, libsu ~500 KB. Enforce R8 + shrinkResources from day one. Fail the build if APK &gt; 8 MB.</li>
+              <li><strong>libsu requires root at runtime.</strong> If user runs the APK without Magisk/KernelSU, it should show "root not available" and exit gracefully.</li>
+              <li><strong>Compose on 3 GB RAM.</strong> Compose is heavier than Views. Consider View-based UI if APK cold-start &gt; 800 ms on A11.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+
+<!-- ============================================================
+     VIEW: TASKS
+     ============================================================ -->
+<main id="view-tasks" class="view" data-view="tasks" hidden>
+  <section class="section-head">
+    <h1>Tasks</h1>
+    <p class="muted">Every task is assignable, filterable, and autosaved. Click any task to open detail. Use the checkbox to mark done.</p>
+  </section>
+
+  <div class="tasks-toolbar">
+    <div class="filter-group">
+      <label class="filter-label">Status</label>
+      <select id="filter-status" class="input input-sm">
+        <option value="all">All</option>
+        <option value="todo">Todo</option>
+        <option value="in_progress">In progress</option>
+        <option value="blocked">Blocked</option>
+        <option value="done">Done</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Owner</label>
+      <select id="filter-owner" class="input input-sm">
+        <option value="all">All</option>
+        <option value="A">Member A</option>
+        <option value="B">Member B</option>
+        <option value="unassigned">Unassigned</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Phase</label>
+      <select id="filter-phase" class="input input-sm">
+        <option value="all">All</option>
+        <option value="1">Phase 1</option>
+        <option value="2">Phase 2</option>
+        <option value="3">Phase 3</option>
+        <option value="4">Phase 4</option>
+        <option value="5">Phase 5</option>
+        <option value="0">Backlog</option>
+      </select>
+    </div>
+    <div class="filter-group filter-grow">
+      <label class="filter-label">Search</label>
+      <input id="filter-search" type="search" class="input input-sm" placeholder="Search title, tag, notes…" />
+    </div>
+    <button id="btn-clear-filters" class="btn btn-ghost btn-sm">Clear filters</button>
+  </div>
+
+  <div id="tasks-container" class="phases-container">
+    <div class="empty-state"><p class="muted">Loading tasks…</p></div>
+  </div>
+</main>
+
+
+<!-- ============================================================
+     VIEW: TEAM & ROLES
+     ============================================================ -->
+<main id="view-team" class="view" data-view="team" hidden>
+  <section class="section-head">
+    <h1>Team &amp; Roles</h1>
+    <p class="muted">Two people. Clear ownership. No stepping on toes.</p>
+  </section>
+
+  <div class="team-grid">
+    <article class="team-card" data-member="A">
+      <div class="team-head">
+        <div class="avatar avatar-a avatar-lg">A</div>
+        <div class="team-head-text">
+          <h3 id="member-a-display">Member A</h3>
+          <p class="muted small">Main coder · Systems &amp; kernel</p>
+        </div>
+      </div>
+      <p class="team-desc">
+        Owns the technical implementation. Writes every shell script, the Magisk module, the AI daemon, and the Kotlin app. Makes architecture decisions. Reviews all sysfs writes. Final sign-off on every tunable before it ships.
+      </p>
+      <div class="team-responsibilities">
+        <h4>Responsibilities</h4>
+        <ul>
+          <li>Magisk module structure + lifecycle scripts</li>
+          <li>All <code>bin/*.sh</code> tuners + detect + revert</li>
+          <li>AI daemon (Kotlin/Go) + TFLite inference</li>
+          <li>Kotlin dashboard (Compose + libsu)</li>
+          <li>Watchdog + thermal guard logic</li>
+          <li>Commit review for every PR</li>
+        </ul>
+      </div>
+      <dl class="team-stats">
+        <dt>Assigned</dt><dd id="member-a-assigned">0</dd>
+        <dt>In progress</dt><dd id="member-a-progress">0</dd>
+        <dt>Done</dt><dd id="member-a-done">0</dd>
+        <dt>Est. hours remaining</dt><dd id="member-a-hours">0h</dd>
+      </dl>
+      <label class="field">
+        <span>Display name</span>
+        <input type="text" id="member-a-name" class="input" value="Member A" />
+      </label>
+    </article>
+
+    <article class="team-card" data-member="B">
+      <div class="team-head">
+        <div class="avatar avatar-b avatar-lg">B</div>
+        <div class="team-head-text">
+          <h3 id="member-b-display">Member B</h3>
+          <p class="muted small">Co-op · Testing, AI, UX</p>
+        </div>
+      </div>
+      <p class="team-desc">
+        Owns everything that isn't code. Runs the device tests, collects the AI dataset, designs the UI mockups, writes the documentation, and is the first line of sanity-checking on any sysfs value before it goes into production.
+      </p>
+      <div class="team-responsibilities">
+        <h4>Responsibilities</h4>
+        <ul>
+          <li>Test every script on the A11 (boot, verify, rollback)</li>
+          <li>Collect feature dataset for AI (2 weeks of real usage)</li>
+          <li>Train TFLite model offline</li>
+          <li>Design Compose mockups before coding starts</li>
+          <li>Write the "expected output" column in Sysfs Bible</li>
+          <li>Benchmark methodology (cold-start, FPS, RAM)</li>
+          <li>Weekly JSON exports + backups</li>
+        </ul>
+      </div>
+      <dl class="team-stats">
+        <dt>Assigned</dt><dd id="member-b-assigned">0</dd>
+        <dt>In progress</dt><dd id="member-b-progress">0</dd>
+        <dt>Done</dt><dd id="member-b-done">0</dd>
+        <dt>Est. hours remaining</dt><dd id="member-b-hours">0h</dd>
+      </dl>
+      <label class="field">
+        <span>Display name</span>
+        <input type="text" id="member-b-name" class="input" value="Member B" />
+      </label>
+    </article>
+  </div>
+
+  <section class="dash-section">
+    <div class="card">
+      <div class="card-head"><h3>Coordination rules</h3></div>
+      <div class="rules-grid">
+        <div class="rule">
+          <div class="rule-num">1</div>
+          <h4>Ship same day</h4>
+          <p>A completed task gets marked done in this tracker the same day. Not tomorrow. Not "after I sleep". Same day.</p>
+        </div>
+        <div class="rule">
+          <div class="rule-num">2</div>
+          <h4>Blockers get logged</h4>
+          <p>If you're stuck, set status = blocked and add a one-line reason in Notes. Silent blockage is not allowed.</p>
+        </div>
+        <div class="rule">
+          <div class="rule-num">3</div>
+          <h4>2× estimate rule</h4>
+          <p>If a task takes more than twice its estimate, ping the other person. Either re-scope it or get help. No solo grinding for days.</p>
+        </div>
+        <div class="rule">
+          <div class="rule-num">4</div>
+          <h4>Friday sync (15 min)</h4>
+          <p>What shipped, what blocked, what changed. Update current week. Export JSON. Update the tracker. Then stop.</p>
+        </div>
+        <div class="rule">
+          <div class="rule-num">5</div>
+          <h4>No untested sysfs writes</h4>
+          <p>Never push a sysfs write to production without testing on the A11 first. Even a "safe" one. Especially a "safe" one.</p>
+        </div>
+        <div class="rule">
+          <div class="rule-num">6</div>
+          <h4>Revert-first mindset</h4>
+          <p>Before adding a new tuning, write its revert. If you can't write the revert, the tuning isn't ready to ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dash-section">
+    <div class="card">
+      <div class="card-head"><h3>Git workflow</h3></div>
+      <div class="git-flow">
+        <pre class="code"><code>main          — always shippable, always tested on A11
+├── phase-1   — magisk skeleton + watchdog
+├── phase-2   — core tuning (6 scripts)
+├── phase-3   — gpu + thermal
+├── phase-4   — ai daemon
+└── phase-5   — dashboard UI
+
+Rule: nobody commits directly to main.
+Every change goes through a phase branch → PR → other person reviews → merge to main.
+Commit message format: "phase-N: short description"
+Tag every phase completion: v0.1, v0.2, v0.3, v0.4, v1.0</code></pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<!-- ============================================================
+     VIEW: FUTURE PLANS
+     ============================================================ -->
+<main id="view-future" class="view" data-view="future" hidden>
+  <section class="section-head">
+    <h1>Future Plans</h1>
+    <p class="muted">What comes after v1.0. Ordered by priority. Nothing here is committed until v1.0 ships.</p>
+  </section>
+
+  <div class="future-grid">
+
+    <article class="future-card">
+      <span class="pill pill-blue">v1.1 · Month 5</span>
+      <h3>Per-app profile tuning</h3>
+      <p>The Room DB currently records which profile worked best. v1.1 exposes a UI to manually override: "always use GAMING for Minecraft", "always use IDLE for Messenger". Plus a "learning" toggle to reset the DB.</p>
+      <ul>
+        <li>UI: per-app profile override list</li>
+        <li>Backend: DB write path from daemon</li>
+        <li>Reset learning option</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-blue">v1.2 · Month 6</span>
+      <h3>KernelSU refinement</h3>
+      <p>v1.0 works on KernelSU but is optimized for Magisk's init flow. v1.2 adds KernelSU-specific detection and adjusts the post-fs-data / service timing for KSU's slightly different boot sequence.</p>
+      <ul>
+        <li>Detect KSU vs Magisk at runtime</li>
+        <li>Adjust watchdog path for KSU</li>
+        <li>Separate test matrix for KSU users</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-green">v2.0 · Month 7–8</span>
+      <h3>Multi-SoC support</h3>
+      <p>Expand beyond SDM450 to other low-end Snapdragons that also suffer from bad default tuning. Each SoC gets its own profile JSON and dedicated test device.</p>
+      <ul>
+        <li>SDM439 (Redmi 7A, etc)</li>
+        <li>SDM660 (Mi A2, Redmi Note 7)</li>
+        <li>SDM665 (Redmi Note 8)</li>
+        <li>SDM680 (Redmi Note 10)</li>
+        <li>SDM695 (Poco X3 Pro)</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-green">v2.1 · Month 8</span>
+      <h3>Gaming overlay</h3>
+      <p>When a game launches, show a small floating overlay with: current FPS, temp, battery, profile lock button. Powered by a foreground service + <code>dumpsys SurfaceFlinger</code> frame stats.</p>
+      <ul>
+        <li>FPS overlay (system window)</li>
+        <li>Temp + battery readout</li>
+        <li>Profile lock toggle</li>
+        <li>Auto-hide when not gaming</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-yellow">v2.2 · Month 9</span>
+      <h3>LSPosed integration</h3>
+      <p>Some tuning (binder priority, SurfaceFlinger) needs hooking framework APIs. Ship an optional LSPosed module that adds: per-app binder priority, activity launch hints, and SurfaceFlinger scheduling overrides.</p>
+      <ul>
+        <li>LSPosed hook module</li>
+        <li>Per-app binder priority</li>
+        <li>Activity launch hints</li>
+        <li>SF scheduling overrides</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-yellow">v3.0 · Month 10–12</span>
+      <h3>Custom governor</h3>
+      <p>The default schedutil is good, but tuned governors like Nebula or Reign outperform it on specific workloads. Ship a small custom governor as a kernel module, tuned specifically for the A53 microarchitecture.</p>
+      <ul>
+        <li>Custom CPU governor (kernel module)</li>
+        <li>Per-cluster tuning</li>
+        <li>Workload detection integration</li>
+        <li>Fallback to schedutil if module fails</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-red">v3.1 · Month 12+</span>
+      <h3>Charge limit / battery bypass</h3>
+      <p>SDM450 devices have a fixed charging path — no bypass. But some support a manual "stop at 80%" via <code>charge_control_end_threshold</code> sysfs. Add it as an optional feature for devices that expose it.</p>
+      <ul>
+        <li>Detect charge threshold sysfs</li>
+        <li>UI: set stop-charge %</li>
+        <li>Notification when reached</li>
+        <li>Skip on unsupported devices</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-red">v3.2 · Month 12+</span>
+      <h3>Display refresh unlock</h3>
+      <p>A11 has a 60 Hz display with no known overclock. Some other SDM450 devices ship with displays that can go higher. Feature deferred until a supported device is confirmed.</p>
+      <ul>
+        <li>Detect display overclock support</li>
+        <li>UI: refresh rate selector</li>
+        <li>Thermal + stability warnings</li>
+        <li>Not implemented for A11</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-red">v4.0 · Long-term</span>
+      <h3>Custom kernel builds</h3>
+      <p>Build a minimal custom kernel with: upstream 4.19/5.4 patches, KSM + MGLRU enabled, custom scheduler patches. Highest potential gain, highest maintenance cost. Only pursue if v1–3 prove demand exists.</p>
+      <ul>
+        <li>Upstream kernel patches</li>
+        <li>KSM + MGLRU enabled</li>
+        <li>Custom scheduler patches</li>
+        <li>Monthly security patches</li>
+        <li>Per-device build matrix</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-purple">Long-term idea</span>
+      <h3>Cloud-optional AI training</h3>
+      <p>Currently, users must send us their feature logs for us to improve the model. Optional feature: privacy-preserving federated training where the model improves from on-device data without ever leaving the device. Ship only if we can do it in &lt; 50 KB of code.</p>
+      <ul>
+        <li>On-device training</li>
+        <li>Federated aggregation</li>
+        <li>Zero data exfiltration</li>
+        <li>Stretch goal, not committed</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-purple">Long-term idea</span>
+      <h3>Web dashboard sync</h3>
+      <p>Optional: an APK-to-web bridge (via local WiFi) that lets users view live stats from a browser tab. No cloud, no account. Only if it doesn't violate the "offline by default" principle.</p>
+      <ul>
+        <li>Local HTTP server (loopback)</li>
+        <li>WebSocket for live stats</li>
+        <li>Requires no internet</li>
+        <li>Deferred until v2</li>
+      </ul>
+    </article>
+
+    <article class="future-card">
+      <span class="pill pill-purple">Long-term idea</span>
+      <h3>Community profile marketplace</h3>
+      <p>Users can share their profile JSON files. No cloud — just GitHub PRs to a community-profiles repo. Not shipped as an app feature; just documentation on how to submit a PR.</p>
+      <ul>
+        <li>Community-profiles GitHub repo</li>
+        <li>PR template + validation CI</li>
+        <li>In-app: browse + download</li>
+        <li>Safety review by maintainers</li>
+      </ul>
+    </article>
+  </div>
+</main>
+
+
+<!-- ============================================================
+     VIEW: REFERENCE (Sysfs Bible)
+     ============================================================ -->
+<main id="view-reference" class="view" data-view="reference" hidden>
+  <section class="section-head">
+    <h1>Sysfs Bible</h1>
+    <p class="muted">Every tunable, every value, every rollback. The single source of truth. If the code disagrees with this page, the code is wrong.</p>
+  </section>
+
+  <div class="ref-toolbar">
+    <input id="ref-search" type="search" class="input" placeholder="Search tunables, paths, or values…" />
+    <select id="ref-category" class="input">
+      <option value="all">All categories</option>
+      <option value="cpu">CPU</option>
+      <option value="sched">Scheduler</option>
+      <option value="mem">Memory / LMK</option>
+      <option value="zram">ZRAM</option>
+      <option value="io">I/O</option>
+      <option value="gpu">GPU</option>
+      <option value="thermal">Thermal</option>
+      <option value="system">System</option>
+    </select>
+  </div>
+
+  <div id="reference-container" class="reference-container">
+
+    <div class="ref-card" data-cat="cpu">
+      <div class="ref-head">
+        <span class="pill pill-green">CPU</span>
+        <h3><code>scaling_governor</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/devices/system/cpu/cpufreq/policy0/scaling_governor</code></dd>
+        <dt>Stock (A11)</dt><dd><code>schedutil</code></dd>
+        <dt>PerfCore value</dt><dd><code>schedutil</code> (unchanged)</dd>
+        <dt>Why</dt><dd>schedutil is already the right choice on SDM450. The gain comes from its tunables, not from swapping the governor.</dd>
+        <dt>Verify</dt><dd><code>cat /sys/devices/system/cpu/cpufreq/policy0/scaling_governor</code></dd>
+        <dt>Rollback</dt><dd>N/A (we never change it)</dd>
+        <dt>Risk</dt><dd>None — this is a read-only decision, not a write.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="cpu">
+      <div class="ref-head">
+        <span class="pill pill-green">CPU</span>
+        <h3><code>rate_limit_us</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/devices/system/cpu/cpufreq/policy0/schedutil/rate_limit_us</code></dd>
+        <dt>Stock (A11)</dt><dd><code>10000</code> (10 ms)</dd>
+        <dt>PerfCore value</dt><dd><code>0</code></dd>
+        <dt>Why</dt><dd>schedutil recomputes CPU freq on every scheduler tick instead of every 10 ms. Costs slightly more power; gives ~30–60 ms lower touch-to-render latency on bursty UI work.</dd>
+        <dt>Verify</dt><dd><code>cat /sys/devices/system/cpu/cpufreq/policy0/schedutil/rate_limit_us</code></dd>
+        <dt>Rollback</dt><dd><code>echo 10000 &gt; /sys/devices/system/cpu/cpufreq/policy0/schedutil/rate_limit_us</code></dd>
+        <dt>Risk</dt><dd>Small idle drain increase. If thermal emergency triggers more than once per day, revert to 5000 as a middle ground.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="cpu">
+      <div class="ref-head">
+        <span class="pill pill-green">CPU</span>
+        <h3><code>pl</code> (prediction load)</h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/devices/system/cpu/cpufreq/policy0/schedutil/pl</code></dd>
+        <dt>Stock (A11)</dt><dd><code>0</code> (or file absent)</dd>
+        <dt>PerfCore value</dt><dd><code>1</code> (if present)</dd>
+        <dt>Why</dt><dd>Biases schedutil toward previous window's load, which helps bursty foreground tasks. Not present on all kernels — logged as <code>skip:not-present</code> if absent.</dd>
+        <dt>Verify</dt><dd><code>cat /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl</code></dd>
+        <dt>Rollback</dt><dd><code>echo 0 &gt; /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl</code></dd>
+        <dt>Risk</dt><dd>Minor. Some kernel builds ignore the write silently — we read-back verify.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="cpu">
+      <div class="ref-head">
+        <span class="pill pill-green">CPU</span>
+        <h3><code>uclamp_min</code> (foreground boost)</h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/dev/cpuset/top-app/uclamp.min</code> (cgroup v1) or <code>/sys/fs/cgroup/top-app/cpu.uclamp.min</code> (cgroup v2)</dd>
+        <dt>Stock (A11)</dt><dd><code>0</code></dd>
+        <dt>PerfCore value</dt><dd><code>700</code> while a foreground app is active, <code>0</code> otherwise</dd>
+        <dt>Why</dt><dd>Floor on CPU capacity granted to the visible app. ~68% capacity → ~1.2 GHz floor when app is on screen. Not applied while screen is off.</dd>
+        <dt>Verify</dt><dd><code>cat /dev/cpuset/top-app/uclamp.min</code></dd>
+        <dt>Rollback</dt><dd><code>echo 0 &gt; /dev/cpuset/top-app/uclamp.min</code></dd>
+        <dt>Risk</dt><dd>If daemon dies while app is foreground, uclamp stays elevated → higher idle drain. Health check restarts daemon.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="sched">
+      <div class="ref-head">
+        <span class="pill pill-blue">Scheduler</span>
+        <h3><code>sched_min_granularity_ns</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/proc/sys/kernel/sched_min_granularity_ns</code></dd>
+        <dt>Stock (A11)</dt><dd><code>3000000</code> (3 ms)</dd>
+        <dt>PerfCore value</dt><dd><code>1000000</code> (1 ms)</dd>
+        <dt>Why</dt><dd>Shorter minimum run-time slice → foreground tasks preempt faster → lower perceived input latency.</dd>
+        <dt>Verify</dt><dd><code>cat /proc/sys/kernel/sched_min_granularity_ns</code></dd>
+        <dt>Rollback</dt><dd><code>echo 3000000 &gt; /proc/sys/kernel/sched_min_granularity_ns</code></dd>
+        <dt>Risk</dt><dd>More context switches → slightly higher kernel CPU overhead. On 8× A53 the cost is negligible (&lt; 2%).</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="sched">
+      <div class="ref-head">
+        <span class="pill pill-blue">Scheduler</span>
+        <h3><code>sched_nr_migrate</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/proc/sys/kernel/sched_nr_migrate</code></dd>
+        <dt>Stock (A11)</dt><dd><code>32</code></dd>
+        <dt>PerfCore value</dt><dd><code>32</code> (unchanged)</dd>
+        <dt>Why</dt><dd>Not tuning this. Documented so nobody "improves" it later. Higher values hurt latency more than they help throughput on single-cluster SoCs.</dd>
+        <dt>Verify</dt><dd><code>cat /proc/sys/kernel/sched_nr_migrate</code></dd>
+        <dt>Rollback</dt><dd>N/A</dd>
+        <dt>Risk</dt><dd>N/A</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="mem">
+      <div class="ref-head">
+        <span class="pill pill-yellow">Memory</span>
+        <h3><code>minfree</code> (classic LMK only)</h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/module/lowmemorykiller/parameters/minfree</code></dd>
+        <dt>Stock (A11)</dt><dd>Varies by build; typically <code>18432,23040,27648,32256,36864,46080</code></dd>
+        <dt>PerfCore value</dt><dd><code>1024,2048,4096,6144,8192,10240</code></dd>
+        <dt>Why</dt><dd>Lower thresholds → LMK waits longer before killing apps → more apps stay cached → faster app switching. Trade: less free RAM at any moment.</dd>
+        <dt>Verify</dt><dd><code>cat /sys/module/lowmemorykiller/parameters/minfree</code></dd>
+        <dt>Rollback</dt><dd>Read from stock snapshot: <code>echo "$STOCK_MINFREE" &gt; /sys/module/lowmemorykiller/parameters/minfree</code></dd>
+        <dt>Risk</dt><dd>Only applied if <code>detect.sh</code> says <code>lmk_type=classic</code>. On PSI kernels this file is present but unused — writing has no effect.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="mem">
+      <div class="ref-head">
+        <span class="pill pill-yellow">Memory</span>
+        <h3><code>ro.lmk.thrashing_limit</code> (PSI)</h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd>Android property, read from <code>getprop ro.lmk.thrashing_limit</code></dd>
+        <dt>Stock (A11)</dt><dd><code>100</code></dd>
+        <dt>PerfCore value</dt><dd><code>30</code></dd>
+        <dt>Why</dt><dd>Kills apps more aggressively when memory thrashing starts, which paradoxically reduces perceived lag (no thrashing = no stutter).</dd>
+        <dt>Verify</dt><dd><code>getprop ro.lmk.thrashing_limit</code></dd>
+        <dt>Rollback</dt><dd><code>setprop ro.lmk.thrashing_limit 100</code> (only works in post-fs-data, not runtime)</dd>
+        <dt>Risk</dt><dd>Knox may revert <code>ro.lmk.*</code> properties after 30 seconds. Script does read-back at +35s; logs <code>skip:knox</code> if reverted.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="mem">
+      <div class="ref-head">
+        <span class="pill pill-yellow">Memory</span>
+        <h3><code>swappiness</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/proc/sys/vm/swappiness</code></dd>
+        <dt>Stock (A11)</dt><dd><code>100</code> (Android default)</dd>
+        <dt>PerfCore value</dt><dd><code>60</code></dd>
+        <dt>Why</dt><dd>Android's aggressive swappiness pushes anonymous pages to ZRAM early, which is CPU-costly on A53. 60 balances swap pressure vs compress cost.</dd>
+        <dt>Verify</dt><dd><code>cat /proc/sys/vm/swappiness</code></dd>
+        <dt>Rollback</dt><dd><code>echo 100 &gt; /proc/sys/vm/swappiness</code></dd>
+        <dt>Risk</dt><dd>If set too low (&lt; 40), ZRAM fills slowly → more OOM kills. 60 is the sweet spot for SDM450 + 3 GB RAM.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="zram">
+      <div class="ref-head">
+        <span class="pill pill-green">ZRAM</span>
+        <h3><code>comp_algorithm</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/block/zram0/comp_algorithm</code></dd>
+        <dt>Stock (A11)</dt><dd><code>[lzo] lz4 lz4hc</code> (lzo active)</dd>
+        <dt>PerfCore value</dt><dd><code>lz4</code></dd>
+        <dt>Why</dt><dd>lz4 decompresses ~3× faster than lzo. Read latency from ZRAM drops from ~40 µs to ~12 µs. The extra CPU cost on compress is unnoticeable.</dd>
+        <dt>Verify</dt><dd><code>cat /sys/block/zram0/comp_algorithm</code></dd>
+        <dt>Rollback</dt><dd>Requires swapoff + reset + swapon cycle. Script does this. Manual: <code>swapoff /dev/block/zram0 &amp;&amp; echo 1 &gt; /sys/block/zram0/reset &amp;&amp; echo lzo &gt; /sys/block/zram0/comp_algorithm &amp;&amp; swapon /dev/block/zram0</code></dd>
+        <dt>Risk</dt><dd>Requires <code>swapoff</code> first. If script forgets, algorithm change is silently rejected. Idempotent script always does the cycle.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="zram">
+      <div class="ref-head">
+        <span class="pill pill-green">ZRAM</span>
+        <h3><code>disksize</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/block/zram0/disksize</code></dd>
+        <dt>Stock (A11)</dt><dd>~1 GB (varies)</dd>
+        <dt>PerfCore value</dt><dd>60% of MemTotal ≈ 1.7 GB</dd>
+        <dt>Why</dt><dd>Bigger ZRAM holds more apps in compressed state. Trade: more CPU on compress, more battery drain. 60% is the balance point for 3 GB RAM.</dd>
+        <dt>Verify</dt><dd><code>cat /sys/block/zram0/disksize</code> then <code>free -m</code></dd>
+        <dt>Rollback</dt><dd>Requires full cycle: swapoff → reset → resize → set algorithm → swapon.</dd>
+        <dt>Risk</dt><dd>If disksize &gt; 80% of RAM, device may fail to boot due to ZRAM initialization eating RAM. Guarded by 60% cap in script.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="io">
+      <div class="ref-head">
+        <span class="pill pill-blue">I/O</span>
+        <h3><code>scheduler</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/block/mmcblk0/queue/scheduler</code></dd>
+        <dt>Stock (A11)</dt><dd><code>noop deadline [cfq]</code></dd>
+        <dt>PerfCore value</dt><dd><code>deadline</code></dd>
+        <dt>Why</dt><dd>deadline balances throughput and latency; cfq adds overhead on a single-queue device. On eMMC 5.1, deadline is measurably faster for app launches.</dd>
+        <dt>Verify</dt><dd><code>cat /sys/block/mmcblk0/queue/scheduler</code> (brackets show active)</dd>
+        <dt>Rollback</dt><dd><code>echo cfq &gt; /sys/block/mmcblk0/queue/scheduler</code></dd>
+        <dt>Risk</dt><dd>Some A11 firmware ships with <code>bfq</code> only — fallback chain: deadline → cfq → noop → leave stock.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="io">
+      <div class="ref-head">
+        <span class="pill pill-blue">I/O</span>
+        <h3><code>read_ahead_kb</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/block/mmcblk0/queue/read_ahead_kb</code></dd>
+        <dt>Stock (A11)</dt><dd><code>128</code></dd>
+        <dt>PerfCore value</dt><dd><code>2048</code></dd>
+        <dt>Why</dt><dd>eMMC reads in 2 MB bursts; matching read-ahead eliminates per-block latency on sequential reads (app cold-start).</dd>
+        <dt>Verify</dt><dd><code>cat /sys/block/mmcblk0/queue/read_ahead_kb</code></dd>
+        <dt>Rollback</dt><dd><code>echo 128 &gt; /sys/block/mmcblk0/queue/read_ahead_kb</code></dd>
+        <dt>Risk</dt><dd>Slightly higher memory usage for page cache. On 3 GB RAM this is fine.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="gpu">
+      <div class="ref-head">
+        <span class="pill pill-yellow">GPU</span>
+        <h3><code>governor</code> (Adreno)</h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/class/kgsl/kgsl-3d0/devfreq/governor</code></dd>
+        <dt>Stock (A11)</dt><dd><code>msm-adreno-tz</code></dd>
+        <dt>PerfCore value</dt><dd><code>msm-adreno-tz</code> (default), <code>performance</code> only during gaming</dd>
+        <dt>Why</dt><dd>performance governor pins to max frequency; safe only when accompanied by thermal guard. Auto-reverts on temp &gt; 70 °C.</dd>
+        <dt>Verify</dt><dd><code>cat /sys/class/kgsl/kgsl-3d0/devfreq/governor</code></dd>
+        <dt>Rollback</dt><dd><code>echo msm-adreno-tz &gt; /sys/class/kgsl/kgsl-3d0/devfreq/governor</code></dd>
+        <dt>Risk</dt><dd>If gaming session ends but governor stays on performance, thermal runaway. Guarded by daemon state machine + temp check.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="thermal">
+      <div class="ref-head">
+        <span class="pill pill-red">Thermal</span>
+        <h3>trip points</h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/sys/class/thermal/thermal_zone*/trip_point_N_temp</code></dd>
+        <dt>Stock (A11)</dt><dd>Varies; CPU throttle typically at 65000–70000</dd>
+        <dt>PerfCore value</dt><dd>Stock + 5000 (max +5 °C)</dd>
+        <dt>Why</dt><dd>Delays throttling by a small margin, giving us more headroom before the SoC cools itself. <strong>Never disable.</strong> <strong>Never exceed +5 °C.</strong></dd>
+        <dt>Verify</dt><dd><code>cat /sys/class/thermal/thermal_zone*/trip_point_*_temp</code></dd>
+        <dt>Rollback</dt><dd>Restore from stock snapshot per zone.</dd>
+        <dt>Risk</dt><dd>Dangerous if script accidentally increases by more than +5 °C. Script clamps to max(stock + 5000). Verified by read-back.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="system">
+      <div class="ref-head">
+        <span class="pill pill-purple">System</span>
+        <h3><code>random.read_wakeup_threshold</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/proc/sys/kernel/random/read_wakeup_threshold</code></dd>
+        <dt>Stock (A11)</dt><dd><code>128</code></dd>
+        <dt>PerfCore value</dt><dd><code>1024</code></dd>
+        <dt>Why</dt><dd>Higher threshold means processes reading /dev/random wake up less often — fewer wakeups, less idle drain, slightly smoother background behavior.</dd>
+        <dt>Verify</dt><dd><code>cat /proc/sys/kernel/random/read_wakeup_threshold</code></dd>
+        <dt>Rollback</dt><dd><code>echo 128 &gt; /proc/sys/kernel/random/read_wakeup_threshold</code></dd>
+        <dt>Risk</dt><dd>Very low. Monitored by kernel, no known issues on SDM450.</dd>
+      </dl>
+    </div>
+
+    <div class="ref-card" data-cat="system">
+      <div class="ref-head">
+        <span class="pill pill-purple">System</span>
+        <h3><code>min_free_kbytes</code></h3>
+      </div>
+      <dl class="ref-dl">
+        <dt>Path</dt><dd><code>/proc/sys/vm/min_free_kbytes</code></dd>
+        <dt>Stock (A11)</dt><dd>~4000–6000 (depends on RAM)</dd>
+        <dt>PerfCore value</dt><dd><code>4096</code></dd>
+        <dt>Why</dt><dd>Lower baseline reserve frees ~1–2 MB for actual use, but more importantly prevents over-eager watermark-based reclaim during light loads.</dd>
+        <dt>Verify</dt><dd><code>cat /proc/sys/vm/min_free_kbytes</code></dd>
+        <dt>Rollback</dt><dd><code>echo 6000 &gt; /proc/sys/vm/min_free_kbytes</code> (use actual stock value)</dd>
+        <dt>Risk</dt><dd>Set too low → OOM before reclaim. 4096 is safe on 3 GB.</dd>
+      </dl>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- ============================================================
+     VIEW: TESTING
+     ============================================================ -->
+<main id="view-testing" class="view" data-view="testing" hidden>
+  <section class="section-head">
+    <h1>Testing</h1>
+    <p class="muted">Every phase has a checklist. Nothing ships without all boxes ticked. No exceptions.</p>
+  </section>
+
+  <article class="prose card">
+    <h2>Golden rules</h2>
+    <ol>
+      <li><strong>Test on the actual A11.</strong> Not an emulator. Not another Samsung. The A11.</li>
+      <li><strong>Test from stock every time.</strong> Before testing a new build, uninstall the old module, reboot, confirm stock.</li>
+      <li><strong>Log everything.</strong> Screenshots of every <code>cat</code> output. Every <code>applied.log</code> snapshot.</li>
+      <li><strong>Break it on purpose.</strong> After passing, corrupt one value manually and verify the revert works.</li>
+      <li><strong>Benchmark before AND after.</strong> Cold-start times, FPS, RAM at idle. Both numbers, not just the after.</li>
+    </ol>
+
+    <h2>Benchmark methodology</h2>
+    <p>Same methodology for every test. Same device state. Same ambient temperature (~25 °C). Same battery level (80–100%).</p>
+
+    <h3>Cold-start test</h3>
+    <ol>
+      <li>Force-stop target app: <code>adb shell am force-stop &lt;pkg&gt;</code></li>
+      <li>Wait 3 seconds</li>
+      <li>Launch: <code>adb shell am start-activity -W -n &lt;pkg&gt;/&lt;activity&gt;</code></li>
+      <li>Record <code>TotalTime</code> from output</li>
+      <li>Repeat 3 times, take median</li>
+    </ol>
+    <p>Test apps: Chrome (<code>com.android.chrome</code>), WhatsApp (<code>com.whatsapp</code>), Gallery (<code>com.sec.android.gallery3d</code>).</p>
+
+    <h3>FPS test</h3>
+    <ol>
+      <li>Launch target game</li>
+      <li>Play for 3 minutes</li>
+      <li>Record FPS from <code>dumpsys SurfaceFlinger --latency</code></li>
+      <li>Record max temp from <code>/sys/class/thermal/thermal_zone*/temp</code></li>
+    </ol>
+    <p>Target game: Subway Surfers (2D, runs well on Adreno 506).</p>
+
+    <h3>RAM at idle</h3>
+    <ol>
+      <li>Boot fresh</li>
+      <li>Leave screen on, do nothing for 10 minutes</li>
+      <li><code>adb shell dumpsys meminfo | head -20</code></li>
+      <li>Record Free RAM, Used RAM, Cached</li>
+    </ol>
+  </article>
+
+  <div class="test-phases">
+
+    <article class="test-card">
+      <div class="test-head">
+        <span class="pill pill-blue">Phase 1</span>
+        <h3>Skeleton + watchdog tests</h3>
+      </div>
+      <ul class="check-list">
+        <li>Flash module → boot → no bootloop</li>
+        <li>Reboot 10 times → all succeed</li>
+        <li>Manually corrupt one sysfs value → reboot 3 times → module auto-disables</li>
+        <li>Re-enable module → boots fine</li>
+        <li>Uninstall → values are back to stock (cat each)</li>
+        <li>Boot counter increments after successful boot</li>
+        <li>Watchdog logs are readable in <code>applied.log</code></li>
+        <li>24-hour soak → no crash, no ANR</li>
+      </ul>
+    </article>
+
+    <article class="test-card">
+      <div class="test-head">
+        <span class="pill pill-green">Phase 2</span>
+        <h3>Core tuning tests</h3>
+      </div>
+      <ul class="check-list">
+        <li><code>detect.sh</code> produces valid <code>capabilities.json</code></li>
+        <li>LMK type matches reality (verify with <code>dumpsys activity lru</code>)</li>
+        <li>Each <code>tune-*.sh</code> runs twice → same state both times (idempotent)</li>
+        <li>Each <code>tune-*.sh</code> logs <code>skip:not-present</code> cleanly when tunable missing</li>
+        <li>Cold-start improves ≥ 25% on Chrome, WhatsApp, Gallery</li>
+        <li>FPS in Subway Surfers improves to ≥ 28 sustained</li>
+        <li>Idle RAM free ≥ 900 MB</li>
+        <li>No thermal emergency in 24-hour use</li>
+        <li>Uninstall restores all 6 categories</li>
+      </ul>
+    </article>
+
+    <article class="test-card">
+      <div class="test-head">
+        <span class="pill pill-yellow">Phase 3</span>
+        <h3>GPU + thermal tests</h3>
+      </div>
+      <ul class="check-list">
+        <li>GPU governor = <code>msm-adreno-tz</code> outside gaming</li>
+        <li>Gaming detection triggers <code>performance</code></li>
+        <li>Gaming exits → governor reverts within 10 s</li>
+        <li>10-minute Subway Surfers never exceeds 70 °C GPU / 75 °C CPU</li>
+        <li>Manually raise thermal zone temp → guard auto-reverts within 5 s</li>
+        <li>Trip points were raised by exactly +5 °C, not more</li>
+        <li>SurfaceFlinger 1008 toggle tested separately, does not crash UI</li>
+      </ul>
+    </article>
+
+    <article class="test-card">
+      <div class="test-head">
+        <span class="pill pill-purple">Phase 4</span>
+        <h3>AI daemon tests</h3>
+      </div>
+      <ul class="check-list">
+        <li>Daemon launches at boot, PID visible in <code>ps -A</code></li>
+        <li>Inference time &lt; 15 ms (logged per cycle)</li>
+        <li>Confidence &lt; 0.7 → rule-based fallback works</li>
+        <li>GAMING detected within 1 s of opening a game</li>
+        <li>THERMAL_EMERGENCY triggers within 5 s of temp &gt; 75 °C</li>
+        <li>Battery drain &lt; 2%/hour with daemon running</li>
+        <li>Daemon crash → auto-restart within 30 s</li>
+        <li>Per-app profile memory persists across reboots</li>
+      </ul>
+    </article>
+
+    <article class="test-card">
+      <div class="test-head">
+        <span class="pill pill-pink">Phase 5</span>
+        <h3>UI + release tests</h3>
+      </div>
+      <ul class="check-list">
+        <li>APK installs on A11 without error</li>
+        <li>Cold-start of dashboard &lt; 1 s</li>
+        <li>All 4 profile switches work without app restart</li>
+        <li>Root not available → graceful error message</li>
+        <li>APK &lt; 8 MB, module + APK &lt; 15 MB</li>
+        <li>Full uninstall → stock verified</li>
+        <li>Full revert-all.sh after all 5 phases → stock verified</li>
+        <li>10-minute gaming stress test → no crash</li>
+      </ul>
+    </article>
+
+    <article class="test-card test-card-warn">
+      <div class="test-head">
+        <span class="pill pill-red">Safety</span>
+        <h3>Boot-loop rollback</h3>
+      </div>
+      <ul class="check-list">
+        <li>Cause: corrupt <code>service.sh</code> so it exits 1</li>
+        <li>Reboot → boot completes (module failed, but boots)</li>
+        <li>Reboot 3 times → module auto-disabled</li>
+        <li>Reboot again → boots stock clean</li>
+        <li>Re-enable manually → works</li>
+      </ul>
+    </article>
+
+  </div>
+</main>
+
+
+<!-- ============================================================
+     VIEW: RISKS
+     ============================================================ -->
+<main id="view-risks" class="view" data-view="risks" hidden>
+  <section class="section-head">
+    <h1>Risks &amp; Safety</h1>
+    <p class="muted">What can go wrong, how likely, and what we do about it. Read this before every commit that touches sysfs.</p>
+  </section>
+
+  <article class="prose card">
+    <h2>Risk classification</h2>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th>Severity</th><th>Meaning</th><th>Response</th></tr></thead>
+        <tbody>
+          <tr><td class="sev-critical"><strong>Critical</strong></td><td>Hardware damage, permanent brick, or data loss</td><td>Must have auto-revert, watchdog, or revert-first design. No exceptions.</td></tr>
+          <tr><td class="sev-high"><strong>High</strong></td><td>Bootloop, unstable device, needs manual intervention</td><td>Must be tested on A11 before merge. Must have documented revert.</td></tr>
+          <tr><td class="sev-med"><strong>Medium</strong></td><td>Degraded experience, battery drain, thermal throttle</td><td>Documented, monitored, tunable. Revert path documented.</td></tr>
+          <tr><td class="sev-low"><strong>Low</strong></td><td>Cosmetic, isolated feature broken, minor latency</td><td>Fix when it comes up. Not blocking.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Known risks (SDM450 / A11 specific)</h2>
+
+    <h3>Critical</h3>
+    <ul class="risk-list">
+      <li><span class="sev-critical">Critical</span> <strong>Disabling thermal entirely.</strong> GPU hits 90 °C → permanent damage. <em>Mitigation:</em> script never disables thermal. Ever. Trip points +5 °C max. Auto-revert on &gt; 70 °C GPU.</li>
+      <li><span class="sev-critical">Critical</span> <strong>Pinning CPU to max freq permanently.</strong> Battery dies in ~90 min; SoC overheats; eventual permanent degradation. <em>Mitigation:</em> no permanent locks. Only foreground uclamp boost, which is released on background.</li>
+      <li><span class="sev-critical">Critical</span> <strong>Writing garbage to thermal trip points.</strong> e.g. <code>echo 0 &gt; trip_point_0_temp</code>. <em>Mitigation:</em> script reads stock first, clamps to max(stock, stock + 5000), verifies by read-back.</li>
+    </ul>
+
+    <h3>High</h3>
+    <ul class="risk-list">
+      <li><span class="sev-high">High</span> <strong>Bootloop from bad <code>post-fs-data.sh</code>.</strong> Runs before boot animation. If it hangs, device appears bricked. <em>Mitigation:</em> post-fs-data.sh has <code>set -e</code> off (so one failure doesn't kill the boot), wraps everything in <code>timeout 5</code>.</li>
+      <li><span class="sev-high">High</span> <strong>Wrong LMK branch.</strong> Writing to <code>minfree</code> on PSI kernel = no-op, but if we later write to <code>ro.lmk.*</code> on classic kernel, we could brick. <em>Mitigation:</em> <code>detect.sh</code> runs before any LMK write. If detection is <code>none</code>, skip LMK entirely.</li>
+      <li><span class="sev-high">High</span> <strong>ZRAM resize fails silently.</strong> <code>disksize</code> write ignored because swap still active. <em>Mitigation:</em> always <code>swapoff</code> first, verify <code>cat disksize</code> after write.</li>
+      <li><span class="sev-high">High</span> <strong>Knox reverts a critical property.</strong> <code>ro.lmk.*</code> property set successfully, then reverted 30 s later. <em>Mitigation:</em> read-back verification at +35 s. If reverted, log <code>skip:knox</code> and continue.</li>
+    </ul>
+
+    <h3>Medium</h3>
+    <ul class="risk-list">
+      <li><span class="sev-med">Medium</span> <strong>Deadline scheduler not supported.</strong> Falls back to cfq / noop / stock. If none, log and skip. Never force.</li>
+      <li><span class="sev-med">Medium</span> <strong>Read-ahead too large.</strong> Wastes page cache. 2048 is tested safe on 3 GB.</li>
+      <li><span class="sev-med">Medium</span> <strong>SurfaceFlinger 1008 crashes UI.</strong> <em>Mitigation:</em> default OFF. Never enable automatically. Documented "advanced users only".</li>
+      <li><span class="sev-med">Medium</span> <strong>Battery drain from daemon.</strong> If daemon wakes every 2 s and does heavy work, drain &gt; 2%/h. <em>Mitigation:</em> feature collection is O(1) reads; inference &lt; 15 ms. Battery logged and benchmarked.</li>
+      <li><span class="sev-med">Medium</span> <strong>AI profile swaps cause jank.</strong> Switching governor mid-frame. <em>Mitigation:</em> daemon only swaps on app transitions, not within an app. Hysteresis: must be stable for 2 cycles before swapping.</li>
+    </ul>
+
+    <h3>Low</h3>
+    <ul class="risk-list">
+      <li><span class="sev-low">Low</span> <strong>Some tunables not present.</strong> Log <code>skip:not-present</code>. Not a failure.</li>
+      <li><span class="sev-low">Low</span> <strong>Applied.log grows large.</strong> Rotates at 1 MB. Older logs archived.</li>
+      <li><span class="sev-low">Low</span> <strong>Config.json corrupted.</strong> Default is recreated on next boot. Logs the incident.</li>
+    </ul>
+
+    <h2>Data safety</h2>
+    <p>PerfCore never touches user data. Specifically:</p>
+    <ul>
+      <li>Does not read or write <code>/data/data/*</code> (app data)</li>
+      <li>Does not read or write <code>/sdcard/*</code> (user files)</li>
+      <li>Does not modify bootloader, recovery, or partition table</li>
+      <li>Only touches: <code>/proc/sys/*</code>, <code>/sys/*</code>, <code>/data/adb/perfcore/*</code>, <code>/data/adb/modules/perfcore/*</code></li>
+    </ul>
+
+    <h2>Boot-loop recovery procedure</h2>
+    <p>If the device won't boot after flashing PerfCore:</p>
+    <ol>
+      <li><strong>Wait for watchdog.</strong> Device boots stock after 3 failed attempts (module auto-disables).</li>
+      <li>If it boots: from Magisk app, uninstall module → reboot. Fixed.</li>
+      <li>If watchdog fails: boot into recovery (Power + Volume Up while plugged in).</li>
+      <li>From TWRP or recovery file manager: <code>rm -rf /data/adb/modules/perfcore</code>. Reboot. Stock.</li>
+      <li>Worst case: reflash stock firmware with Odin. Loses root, but recovers the phone. This should never happen — watchdog exists precisely to prevent it.</li>
+    </ol>
+
+    <h2>Thermal ceiling policy (absolute)</h2>
+    <div class="callout callout-danger">
+      <strong>Never exceed these numbers.</strong> If any script or daemon ever writes a value that would exceed these, it is a bug. File an issue, revert the change immediately.
+      <ul>
+        <li>CPU: <strong>75 °C</strong> — measured from <code>/sys/class/thermal/thermal_zone*/temp</code> for the CPU zone</li>
+        <li>GPU: <strong>70 °C</strong> — measured from the GPU thermal zone</li>
+        <li>Battery: <strong>45 °C</strong> — measured from <code>/sys/class/power_supply/battery/temp</code></li>
+      </ul>
+      <p>These are not targets. They're ceilings. Trigger auto-revert on ANY of them.</p>
+    </div>
+  </article>
+</main>
+
+
+<!-- ============================================================
+     VIEW: ACTIVITY
+     ============================================================ -->
+<main id="view-activity" class="view" data-view="activity" hidden>
+  <section class="section-head">
+    <h1>Activity Log</h1>
+    <p class="muted">Every task change, every status update, timestamped. Exports as JSON.</p>
+  </section>
+  <div class="card">
+    <div class="card-head">
+      <h3>History</h3>
+      <button id="btn-clear-activity" class="btn btn-ghost btn-sm">Clear log</button>
+    </div>
+    <ul id="activity-full" class="activity-list activity-list-full">
+      <li class="empty">No activity yet. Mark a task done to see entries here.</li>
+    </ul>
+  </div>
+</main>
+
+
+<!-- ============================================================
+     VIEW: SETTINGS
+     ============================================================ -->
+<main id="view-settings" class="view" data-view="settings" hidden>
+  <section class="section-head">
+    <h1>Settings</h1>
+    <p class="muted">All data in your browser. No network. No accounts.</p>
+  </section>
+
+  <div class="settings-grid">
+
+    <div class="card">
+      <div class="card-head"><h3>Appearance</h3></div>
+      <label class="field">
+        <span>Theme</span>
+        <select id="theme-select" class="input">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="auto">Auto (system)</option>
+        </select>
+      </label>
+      <label class="field field-row">
+        <span>Reduce motion</span>
+        <label class="switch">
+          <input type="checkbox" id="reduce-motion" />
+          <span class="slider"></span>
+        </label>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>Project</h3></div>
+      <label class="field">
+        <span>Project name</span>
+        <input id="project-name" type="text" class="input" value="PerfCore" />
+      </label>
+      <label class="field">
+        <span>GitHub URL</span>
+        <input id="project-github" type="url" class="input" placeholder="https://github.com/user/perfcore" />
+      </label>
+      <label class="field">
+        <span>Start date</span>
+        <input id="project-start" type="date" class="input" />
+      </label>
+      <label class="field">
+        <span>Current week</span>
+        <input id="project-week" type="number" min="1" max="16" class="input" value="1" />
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>Data</h3></div>
+      <p class="muted small">Saved in localStorage under <code>perfcore:v1</code>. Backed up only when you export.</p>
+      <div class="btn-row">
+        <button id="btn-export-2" class="btn">Export JSON backup</button>
+        <button id="btn-import" class="btn">Import JSON</button>
+        <input type="file" id="import-file" accept="application/json" hidden />
+      </div>
+      <div class="btn-row">
+        <button id="btn-reset-tasks" class="btn btn-danger">Reset task states</button>
+        <button id="btn-clear-all" class="btn btn-danger">Wipe all data</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>About</h3></div>
+      <p class="muted small">
+        PerfCore is a root-only Android performance module for low-end Snapdragon devices.
+        Primary target: Samsung Galaxy A11 (SDM450). Distributed on GitHub, not the Play Store.
+        Not affiliated with Google, Qualcomm, or Samsung.
+      </p>
+      <p class="muted small">
+        This workspace is a static site. No server, no analytics, no cookies. Data lives only
+        in your browser's localStorage. Export regularly.
+      </p>
+      <p class="muted small">Version <span id="app-version-footer">1.0.0</span></p>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- FOOTER -->
+<footer class="app-footer">
+  <span class="muted small">PerfCore workspace · offline · local-only · built by 2 people</span>
+</footer>
+
+</div><!-- /.main-wrap -->
+</div><!-- /.app-shell -->
+
+
+<!-- ============================================================
+     MODALS
+     ============================================================ -->
+
+<div id="modal-task" class="modal" hidden role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-body">
+    <div class="modal-head">
+      <h3 id="task-modal-title">New task</h3>
+      <button class="icon-btn" data-close-modal aria-label="Close">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6 L18 18 M6 18 L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <form id="task-form" class="modal-form">
+      <input type="hidden" id="task-id" name="id" />
+      <label class="field">
+        <span>Title *</span>
+        <input id="task-title" name="title" type="text" class="input" required maxlength="160" placeholder="e.g. Write tune-zram.sh" />
+      </label>
+      <label class="field">
+        <span>Description</span>
+        <textarea id="task-desc" name="description" class="input" rows="4" maxlength="2000" placeholder="What needs to be done, acceptance criteria, notes…"></textarea>
+      </label>
+      <div class="form-grid">
+        <label class="field">
+          <span>Phase</span>
+          <select id="task-phase" name="phase" class="input">
+            <option value="1">Phase 1 · Magisk skeleton</option>
+            <option value="2">Phase 2 · Core tuning</option>
+            <option value="3">Phase 3 · GPU + thermal</option>
+            <option value="4">Phase 4 · AI daemon</option>
+            <option value="5">Phase 5 · UI + stress</option>
+            <option value="0">Backlog</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Week</span>
+          <input id="task-week" name="week" type="number" min="1" max="16" class="input" value="1" />
+        </label>
+        <label class="field">
+          <span>Owner</span>
+          <select id="task-owner" name="owner" class="input">
+            <option value="">Unassigned</option>
+            <option value="A">Member A</option>
+            <option value="B">Member B</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Status</span>
+          <select id="task-status" name="status" class="input">
+            <option value="todo">Todo</option>
+            <option value="in_progress">In progress</option>
+            <option value="blocked">Blocked</option>
+            <option value="done">Done</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Priority</span>
+          <select id="task-priority" name="priority" class="input">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+            <option value="critical">Critical</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Est. hours</span>
+          <input id="task-est" name="estimate" type="number" min="0" step="0.5" class="input" />
+        </label>
+      </div>
+      <label class="field">
+        <span>Tags (comma-separated)</span>
+        <input id="task-tags" name="tags" type="text" class="input" placeholder="magisk, kernel, sysfs" />
+      </label>
+      <label class="field">
+        <span>Notes</span>
+        <textarea id="task-notes" name="notes" class="input" rows="3" placeholder="Any additional context, links, or blockers…"></textarea>
+      </label>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" data-close-modal>Cancel</button>
+        <button type="submit" class="btn btn-primary" id="task-submit">Save task</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="modal-detail" class="modal" hidden role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-body modal-body-wide">
+    <div class="modal-head">
+      <div>
+        <span class="pill" id="detail-pill">Phase</span>
+        <h3 id="detail-title">Task</h3>
+      </div>
+      <button class="icon-btn" data-close-modal aria-label="Close">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6 L18 18 M6 18 L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="detail-body">
+      <p id="detail-desc" class="muted"></p>
+      <dl class="detail-meta" id="detail-meta"></dl>
+      <div class="detail-tags" id="detail-tags"></div>
+      <label class="field">
+        <span>Notes</span>
+        <textarea id="detail-notes" class="input" rows="4" placeholder="Progress notes…"></textarea>
+      </label>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" data-close-modal>Close</button>
+      <button class="btn" id="detail-edit">Edit</button>
+      <button class="btn btn-danger" id="detail-delete">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div id="modal-confirm" class="modal" hidden role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-body modal-body-sm">
+    <div class="modal-head">
+      <h3 id="confirm-title">Are you sure?</h3>
+      <button class="icon-btn" data-close-modal aria-label="Close">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6 L18 18 M6 18 L18 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <p id="confirm-message" class="muted"></p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" data-close-modal>Cancel</button>
+      <button class="btn btn-danger" id="confirm-ok">Confirm</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     TEMPLATES
+     ============================================================ -->
+
+<template id="tpl-task-row">
+  <li class="task-card" data-task-id="">
+    <div class="task-main">
+      <label class="check">
+        <input type="checkbox" data-action="toggle-done" />
+        <span class="check-box"></span>
+      </label>
+      <div class="task-body" data-action="open-detail">
+        <div class="task-title"></div>
+        <div class="task-meta">
+          <span class="pill pill-sm" data-slot="phase"></span>
+          <span class="pill pill-sm" data-slot="priority"></span>
+          <span class="owner-badge" data-slot="owner"></span>
+          <span class="muted small" data-slot="hours"></span>
+        </div>
+      </div>
+      <div class="task-actions">
+        <button class="icon-btn" data-action="edit" title="Edit">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M4 20 h4 L20 8 l-4-4 L4 16 z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="task-tags" data-slot="tags"></div>
+  </li>
+</template>
+
+<template id="tpl-phase-block">
+  <section class="phase-block" data-phase="">
+    <header class="phase-block-head">
+      <div class="phase-title-wrap">
+        <span class="phase-marker"></span>
+        <div>
+          <h3 class="phase-title"></h3>
+          <p class="muted small phase-dates"></p>
+        </div>
+      </div>
+      <div class="phase-progress-wrap">
+        <div class="progress progress-md"><div class="progress-fill"></div></div>
+        <span class="muted small phase-progress-label"></span>
+      </div>
+    </header>
+    <ul class="task-list phase-task-list"></ul>
+  </section>
+</template>
+
+<template id="tpl-activity">
+  <li class="activity-item">
+    <span class="activity-dot"></span>
+    <div class="activity-body">
+      <div class="activity-text"></div>
+      <div class="muted small activity-time"></div>
+    </div>
+  </li>
+</template>
+
+<div id="toast-container" class="toast-container"></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
